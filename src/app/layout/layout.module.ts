@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {HeaderComponent} from './components/header/header.component';
 import {LayoutComponent} from './layout.component';
 import {LayoutRoutingModule} from './layout-routing.module';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -10,6 +11,6 @@ import {LayoutRoutingModule} from './layout-routing.module';
     CommonModule,
     LayoutRoutingModule
   ],
-  declarations: [LayoutComponent, HeaderComponent]
+  declarations: [LayoutComponent, HeaderComponent, SidebarComponent]
 })
 export class LayoutModule {}
