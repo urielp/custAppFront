@@ -1,12 +1,16 @@
 <nav class="navbar navbar-expand-lg fixed-top">
   <a class="navbar-brand" href="#">SB Admin Angular5 BS4 </a>
+  <span><i class="fas fa-search" style="color: #28a745"></i></span>
   <button class="navbar-toggler" type="button" (click)="toggleSidebar()">
-    <!-- <span class="navbar-toggler-icon"></span> -->
+   <span class="navbar-toggler-icon"></span>
     <i class="fa fa-bars text-muted" aria-hidden="true"></i>
   </button>
   <div class="collapse navbar-collapse">
+
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="{{ 'Search'  }}" >
+      <div><i class="fa fa-trash"></i></div>
+
     </form>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item d-none d-xl-block">
@@ -17,6 +21,7 @@
         >
           {{ 'Download Now'  }}
         </a>
+
       </li> &nbsp;
       <li class="nav-item">
         <a href="javascript:void(0)" class="nav-link mt-1"
@@ -29,11 +34,11 @@
 
       <li class="nav-item dropdown" ngbDropdown>
         <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
-          <i class="fa fa-bell"></i> <b class="caret"></b><span class="sr-only">(current)</span>
+          <i class="fa fa-bell"></i> <b class="caret"></b><span class="sr-only"></span>
         </a>
         <div class="dropdown-menu-right" ngbDropdownMenu>
 
-      <li class="dropdown-divider"></li>
+
 
   </div>
   </li>
@@ -42,3 +47,4 @@
   </ul>
   </div>
 </nav>
+
