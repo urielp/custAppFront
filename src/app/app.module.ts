@@ -8,12 +8,16 @@ import {CommonModule} from '@angular/common';
 import {LayoutModule} from './layout/layout.module';
 import {LayoutComponent} from './layout/layout.component';
 import {HeaderComponent} from './layout/components/header/header.component';
+import { InvestorListComponent } from './investors/investor-list/investor-list.component';
+import { InvestorComponent } from './investors/investor/investor.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InvestorListComponent,
+    InvestorComponent
   ],
   imports: [
     CommonModule,
