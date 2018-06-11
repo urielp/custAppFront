@@ -4,6 +4,7 @@ import {HeaderComponent} from './components/header/header.component';
 import {LayoutComponent} from './layout.component';
 import {LayoutRoutingModule} from './layout-routing.module';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import {InvestorComponent} from '../investors/investor/investor.component';
 
 
 @NgModule({
