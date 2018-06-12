@@ -480,6 +480,7 @@ a.widget {
   color: #333;
   background-color: #fff;
   border-color: #ccc;
+
 }
 
 .btn-default:hover {
@@ -538,6 +539,25 @@ a {
 }
 
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  //Instead of the line below you could use @include border-bottom-left-radius($radius)
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 3px;
+  //Instead of the line below you could use @include border-bottom-left-radius($radius)
+  border-bottom-right-radius: 3px;
+}
+.btn-group > {
+  .btn:not(:first-child) {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+  }
+  .btn-group:not(:first-child) > .btn {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
