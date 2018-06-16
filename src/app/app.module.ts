@@ -10,15 +10,12 @@ import {LayoutComponent} from './layout/layout.component';
 import {HeaderComponent} from './layout/components/header/header.component';
 import { InvestorListComponent } from './investors/investor-list/investor-list.component';
 import { InvestorComponent } from './investors/investor/investor.component';
-
+import {InvestorsService} from '../app/investors/investor/investors-service';
+import { InvestorsComponent } from './investors/investors.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    InvestorListComponent,
-    InvestorComponent
-  ],
+
   imports: [
     CommonModule,
     BrowserModule,
@@ -27,7 +24,8 @@ import { InvestorComponent } from './investors/investor/investor.component';
     AppRoutingModule
 
   ],
-  providers: [],
+  declarations: [AppComponent],
+  providers: [InvestorsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

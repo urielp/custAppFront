@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
+import {Component, Input, OnInit} from '@angular/core';
+import {InvestorsService} from './investors-service';
+import Investor from '../../models/investor.model';
 @Component({
   selector: 'app-investor',
   templateUrl: './investor.component.html',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvestorComponent implements OnInit {
 
-  constructor() { }
+  @Input()expenseItem: Investor;
+  constructor(private investorsService: InvestorsService) { }
 
   ngOnInit() {
+
   }
 
 }
