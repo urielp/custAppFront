@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-8 col-md-offset-8">
+  <div class="col-md-12 ">
     <div class="block">
       <div class="block-title">
         <div class="block-options text-center">
@@ -31,7 +31,12 @@
           <a href="javascript:void(0)" class="btn btn-sm btn-alt btn-default">Z</a>
         </div>
       </div>
-      <app-investor></app-investor>
+        <div class=" row col-md-12">
+          <div class="col-md-3" *ngFor="let investor of investorsList">
+            <app-investor [expenseItem]="investor"></app-investor>
+          </div>
+
+      </div>
     </div>
   </div>
 </div>
