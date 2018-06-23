@@ -1,3 +1,4 @@
+<h1>רשימת משקיעים</h1>
 <div class="row">
   <div class="col-md-12 ">
     <div class="block">
@@ -33,13 +34,13 @@
       </div>
         <div class=" row col-md-12">
           <div class="col-md-3" *ngFor="let investor of investorsList">
-            <app-investor [expenseItem]="investor"></app-investor>
+            <app-investor [investorObject]="investor"></app-investor>
           </div>
-
       </div>
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>
 <!--<div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">-->
   <!--<ul class="list-group" id="contact-list">-->
     <!--<li class="list-group-item list-group-item-action" *ngFor="let investor of investorsList">-->

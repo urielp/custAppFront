@@ -12,6 +12,7 @@ import { InvestorListComponent } from './investors/investor-list/investor-list.c
 import { InvestorComponent } from './investors/investor/investor.component';
 import {InvestorsService} from '../app/investors/investor/investors-service';
 import { InvestorsComponent } from './investors/investors.component';
+import { RatingComponent } from './component/rating/rating.component';
 
 
 @NgModule({

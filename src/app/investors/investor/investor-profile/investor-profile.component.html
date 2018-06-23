@@ -1,0 +1,46 @@
+<div class="row" *ngIf="investorObject">
+  <div class="col col-sm-8">
+    <div class="card mt-3">
+      <div class="card-header"><h1 class="tital"></h1>{{investorObject.firstName}}</div>
+      <div class="card-body">
+        <div class="row" >
+          <div class="col-md-10 text-right">
+            <span class="text-muted"><i class="fa fa-mobile-phone fa-fw"></i> נייד: </span> {{investorObject.cellPhoneNumber}}<br>
+            <div class="bot-border"></div>
+            <span class="text-muted"><i class="fa fa-phone-square fa-fw"></i> משרד: </span>{{investorObject.officePhoneNumber}}<br>
+            <div class="bot-border"></div>
+            <span class="text-muted"><i class="fa fa-map-marker fa-fw"></i> כתובת: </span> <br>
+            <div class="bot-border"></div>
+            <span class="text-muted"><i class="fa fa-birthday-cake fa-fw"></i> תאריך לידה: </span> 01.01.2001<br>
+            <div class="bot-border"></div>
+            <span class="text-muted"><i class="fa fa-building fa-fw"></i> חברה: </span> 01.01.2001<br>
+            <div class="bot-border"></div>
+            <span class="text-muted"><i class="fa fa-user-circle fa-fw"></i> תפקיד: </span> 01.01.2001<br>
+            <div class="bot-border"></div>
+            <span class="text-muted"><i class="fa fa-handshake-o fa-fw"></i> מגייס: </span> 01.01.2001<br>
+            <div class="bot-border"></div>
+            <span class="text-muted"><i class="fa fa-envelope fa-fw"></i> דואר אלקטרוני: </span> email@test.com<br>
+            <div class="bot-border"></div>
+            <span class="text-muted"><i class="fa fa-star fa-fw"></i> דירוג: </span><app-rating [currentRate]="3"></app-rating><br>
+            <div class="bot-border"></div>
+            <span class="text-muted"><i class="fa fa-comment fa-fw"></i> הערות: </span> <br>
+            <div class="bot-border"></div>
+            <a href="javascript:void(0);"><span ><i class="fa fa-industry fa-fw"></i> פרוייקטים שייכים </span></a><br>
+            <div class="bot-border"></div>
+            <a href="javascript:void(0);"><span ><i class="fa fa-files-o fa-fw"></i> קבצים קשורים </span></a><br>
+            <div class="bot-border"></div>
+            <span class="text-muted"><i class="fa fa-calendar-times-o fa-fw"></i> תאריך הצטרפות: </span> email@test.com<br>
+          </div>
+          <div class="col-md-2 text-center">
+            <img class="img-circle avatar avatar-original profile-image1"   style="-webkit-user-select:none;
+              display:block; margin:auto;" src="http://robohash.org/sitsequiquia.png?size=120x120">
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-secondary" >חזור</button>
+      </div>
+    </div>
+  </div>
+</div>
+
