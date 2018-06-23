@@ -9,19 +9,19 @@
             <div class="bot-border"></div>
             <span class="text-muted"><i class="fa fa-phone-square fa-fw"></i> משרד: </span>{{investorObject.officePhoneNumber}}<br>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-map-marker fa-fw"></i> כתובת: </span> <br>
+            <span class="text-muted"><i class="fa fa-map-marker fa-fw"></i> כתובת: </span> {{investorObject.address}}<br>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-birthday-cake fa-fw"></i> תאריך לידה: </span> 01.01.2001<br>
+            <span class="text-muted"><i class="fa fa-birthday-cake fa-fw"></i> תאריך לידה: </span> {{investorObject.birthDate}}<br>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-building fa-fw"></i> חברה: </span> 01.01.2001<br>
+            <span class="text-muted"><i class="fa fa-building fa-fw"></i> חברה: </span> {{investorObject.company}}<br>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-user-circle fa-fw"></i> תפקיד: </span> 01.01.2001<br>
+            <span class="text-muted"><i class="fa fa-user-circle fa-fw"></i> תפקיד: </span> {{investorObject.role}}<br>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-handshake-o fa-fw"></i> מגייס: </span> 01.01.2001<br>
+            <span class="text-muted"><i class="fa fa-handshake-o fa-fw"></i> מגייס: </span> {{investorObject.recuriter}}<br>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-envelope fa-fw"></i> דואר אלקטרוני: </span> email@test.com<br>
+            <span class="text-muted"><i class="fa fa-envelope fa-fw"></i> דואר אלקטרוני: </span> {{investorObject.email}}<br>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-star fa-fw"></i> דירוג: </span><app-rating [currentRate]="3"></app-rating><br>
+            <span class="text-muted"><i class="fa fa-star fa-fw"></i> דירוג: </span><app-rating [currentRate]=investorObject.rank></app-rating><br>
             <div class="bot-border"></div>
             <span class="text-muted"><i class="fa fa-comment fa-fw"></i> הערות: </span> <br>
             <div class="bot-border"></div>
@@ -29,7 +29,7 @@
             <div class="bot-border"></div>
             <a href="javascript:void(0);"><span ><i class="fa fa-files-o fa-fw"></i> קבצים קשורים </span></a><br>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-calendar-times-o fa-fw"></i> תאריך הצטרפות: </span> email@test.com<br>
+            <span class="text-muted"><i class="fa fa-calendar-times-o fa-fw"></i> תאריך הצטרפות: </span> {{investorObject.joinDate}}<br>
           </div>
           <div class="col-md-2 text-center">
             <img class="img-circle avatar avatar-original profile-image1"   style="-webkit-user-select:none;

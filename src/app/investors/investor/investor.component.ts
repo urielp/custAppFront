@@ -23,6 +23,6 @@ export class InvestorComponent implements OnInit {
   }
 
   onLoadProfile() {
-    this.router.navigate(['../investorProfile/', this.investorObject._id],{ relativeTo: this.route });
+    this.router.navigate(['../investorProfile/', this.investorObject._id], { relativeTo: this.route });
   }
 }
