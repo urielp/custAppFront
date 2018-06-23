@@ -17,18 +17,18 @@ export class InvestorListComponent implements OnInit {
       if (results.success) {
         this.investorsList = results.data.docs as Investor[];
         console.log(this.investorsList);
-        this.investorsList.push({});
-        this.investorsList.push({});
-        this.investorsList.push({});
-        this.investorsList.push({});
-        this.investorsList.push({});
-        this.investorsList.push({});
-        this.investorsList.push({});
-        this.investorsList.push({});
-        this.investorsList.push({});
-        this.investorsList.push({});
-        this.investorsList.push({});
-        this.investorsList.push({});
+        // this.investorsList.push({});
+        // this.investorsList.push({});
+        // this.investorsList.push({});
+        // this.investorsList.push({});
+        // this.investorsList.push({});
+        // this.investorsList.push({});
+        // this.investorsList.push({});
+        // this.investorsList.push({});
+        // this.investorsList.push({});
+        // this.investorsList.push({});
+        // this.investorsList.push({});
+        // this.investorsList.push({});
       }
     });
   }

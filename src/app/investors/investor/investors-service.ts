@@ -12,12 +12,15 @@ export class InvestorsService {
   api_url = 'http://localhost:3000';
   investors_url = `${this.api_url}/Investor`;
   constructor(private httpClient: HttpClient) {
-    console.log(this.getInvestors());
   }
 
 
   getInvestors(): Observable<any> {
     console.log(this.investors_url + '/investors');
     return this.httpClient.get(this.investors_url + '/investors');
+  }
+
+  getSingleInvestorById(id): Observable<any> {
+    return this.httpClient.get(this.investors_url + '/investor/' + id);
   }
 }
