@@ -211,10 +211,17 @@ body {
   margin: -20px -15px 20px;
   border-bottom: 1px dotted #dbe1e8;
 }
+.block-footer {
 
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  width:100%;
+}
 .block-section {
   margin-bottom: 20px;
 }
+
 
 .block.block-fullscreen {
   position: fixed;
