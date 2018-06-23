@@ -8,6 +8,7 @@ import { InvestorModalComponent } from './investor/investor-modal/investor-modal
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { InvestorProfileComponent } from './investor/investor-profile/investor-profile.component';
 import {RatingComponent} from '../component/rating/rating.component';
+import { AddInvestorComponent } from './investor/add-investor/add-investor.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import {RatingComponent} from '../component/rating/rating.component';
     InvestorListComponent,
     InvestorComponent,
     InvestorModalComponent,
-    InvestorProfileComponent
+    InvestorProfileComponent,
+    AddInvestorComponent
   ]
 })
 export class InvestorsModule {}
