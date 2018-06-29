@@ -16,7 +16,6 @@ export class InvestorsService {
 
 
   getInvestors(): Observable<any> {
-    console.log(this.investors_url + '/investors');
     return this.httpClient.get(this.investors_url + '/investors');
   }
 

@@ -1,0 +1,132 @@
+<ng-template  #comments let-c="close" let-d="dismiss" >
+        <div class="modal-header">
+          <h4 class="titel" ><i class="fa fa-comment fa-fw"></i>הערות</h4>
+        </div>
+        <div class="modal-body text">
+          <div class="col-md-12" style="margin-right: -20px">
+          <ul class="list-group" *ngFor="let comment of commentsArray">
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-md-11 ">
+                  <div>
+                    <div class="comment-text">{{comment.comment}}</div>
+                    <div class="mic-info">
+                      ע"י: <a href="#"> {{comment.name}} </a>
+                      <br>
+                      בתאריך : {{comment.date}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!--<li class="list-group-item">-->
+              <!--<div class="row">-->
+                <!--<div class="col-md-11 ">-->
+                  <!--<div>-->
+                    <!--<a href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">-->
+                      <!--Google Style Login Page Design Using Bootstrap</a>-->
+                    <!--<div class="mic-info">-->
+                      <!--By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--<li class="list-group-item">-->
+              <!--<div class="row">-->
+                <!--<div class="col-md-11 ">-->
+                  <!--<div>-->
+                    <!--<a href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">-->
+                      <!--Google Style Login Page Design Using Bootstrap</a>-->
+                    <!--<div class="mic-info">-->
+                      <!--By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--<li class="list-group-item">-->
+              <!--<div class="row">-->
+                <!--<div class="col-md-11 ">-->
+                  <!--<div>-->
+                    <!--<a href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">-->
+                      <!--Google Style Login Page Design Using Bootstrap</a>-->
+                    <!--<div class="mic-info">-->
+                      <!--By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--<li class="list-group-item">-->
+              <!--<div class="row">-->
+                <!--<div class="col-md-11 ">-->
+                  <!--<div>-->
+                    <!--<a href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">-->
+                      <!--Google Style Login Page Design Using Bootstrap</a>-->
+                    <!--<div class="mic-info">-->
+                      <!--By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--<li class="list-group-item">-->
+              <!--<div class="row">-->
+                <!--<div class="col-md-11 ">-->
+                  <!--<div>-->
+                    <!--<a href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">-->
+                      <!--Google Style Login Page Design Using Bootstrap</a>-->
+                    <!--<div class="mic-info">-->
+                      <!--By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--<li class="list-group-item">-->
+              <!--<div class="row">-->
+                <!--<div class="col-md-11 ">-->
+                  <!--<div>-->
+                    <!--<a href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">-->
+                      <!--Google Style Login Page Design Using Bootstrap</a>-->
+                    <!--<div class="mic-info">-->
+                      <!--By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--<li class="list-group-item">-->
+              <!--<div class="row">-->
+                <!--<div class="col-md-11 ">-->
+                  <!--<div>-->
+                    <!--<a href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">-->
+                      <!--Google Style Login Page Design Using Bootstrap</a>-->
+                    <!--<div class="mic-info">-->
+                      <!--By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--<li class="list-group-item">-->
+              <!--<div class="row">-->
+                <!--<div class="col-md-11 ">-->
+                  <!--<div>-->
+                    <!--<a href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">-->
+                      <!--Google Style Login Page Design Using Bootstrap</a>-->
+                    <!--<div class="mic-info">-->
+                      <!--By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</li>-->
+          </ul>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="d('Close click')" >סגור</button>
+        </div>
+</ng-template>
