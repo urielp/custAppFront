@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-add-investor',
@@ -8,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class AddInvestorComponent implements OnInit {
 
   constructor() { }
-
+@ViewChild('f') addInvestorForm: NgForm;
   ngOnInit() {
+  }
+  onSubmit(form: NgForm) {
+    console.log(form);
   }
 
 }

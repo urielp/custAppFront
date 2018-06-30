@@ -13,6 +13,7 @@ import { InvestorComponent } from './investors/investor/investor.component';
 import {InvestorsService} from '../app/investors/investor/investors-service';
 import { InvestorsComponent } from './investors/investors.component';
 import { RatingComponent } from './component/rating/rating.component';
+import { DatePickerComponent } from './component/date-picker/date-picker.component';
 
 
 @NgModule({

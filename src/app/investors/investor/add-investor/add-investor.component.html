@@ -1,4 +1,4 @@
-<form>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
 <div class="row" >
   <div class="col col-sm-8">
     <div class="card mt-3">
@@ -7,26 +7,120 @@
         <div class="row" >
           <div class="col-md-10 text-right">
             <div class="form-group">
-              <i class="fa fa-mobile-phone fa-fw"></i>
+              <div class="col-md-5">
+                <span class="text-muted">  <i class="fa fa-mobile-phone fa-fw"></i></span>
               <label for="cellPhone"> נייד:  </label>
-              <input type="text" id="cellPhone" class="form-control" name="cellPhone">
+              <input type="text"
+                     id="cellPhone"
+                     class="form-control"
+                     ngModel
+                     name="cellPhone">
+              </div>
             </div>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-phone-square fa-fw"></i> משרד: </span><br>
+            <div class="form-group">
+              <div class="col-md-5">
+                <span class="text-muted"><i class="fa fa-phone-square fa-fw"></i></span>
+                  <label for="officePhone">
+                  משרד:
+                  </label>
+                  <input type="text"
+                         id="officePhone"
+                         class="form-control"
+                         ngModel
+                         name="officePhone">
+
+              </div>
+              </div>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-map-marker fa-fw"></i> כתובת: </span> <br>
+            <div class="form-group">
+              <div class="col-md-5">
+                <span class="text-muted"><i class="fa fa-map-marker fa-fw"></i></span>
+                <label for="address"> כתובת: </label>
+                <input type="text"
+                        id="address"
+                        class="form-control"
+                        ngModel
+                        name="address">
+              </div>
+            </div>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-birthday-cake fa-fw"></i> תאריך לידה: </span> <br>
+            <div class="form-group">
+              <div class="col-md-5">
+                <span class="text-muted"><i class="fa fa-birthday-cake fa-fw"></i>  </span>
+                <label for="birthDate">תאריך לידה:</label>
+                <!--<input type="date"-->
+                        <!--id="birthDate"-->
+                        <!--class="form-control"-->
+                        <!--ngModel-->
+                        <!--name="birthDate">-->
+                <div class="input-group datepicker-input">
+                <button class="input-group-addon" (click)="d.toggle()" type="button">
+                  <span class="fa fa-calendar"></span>
+                </button>
+                <input class="form-control" placeholder="dd-mm-yyy"
+                       name="birthDate" id="birthDate" ngModel ngbDatepicker #d="ngbDatepicker">
+                </div>
+              </div>
+            </div>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-building fa-fw"></i> חברה: </span> <br>
+            <div class="form-group">
+              <div class="col-md-5">
+                <span class="text-muted"><i class="fa fa-building fa-fw"></i></span>
+                <label for="company">
+                  חברה :
+                </label>
+                <input type="text"
+                       id="company"
+                       class="form-control"
+                       ngModel
+                       name="company">
+              </div>
+            </div>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-user-circle fa-fw"></i> תפקיד: </span> <br>
+            <div class="form-group">
+              <div class="col-md-5" >
+                <span class="text-muted"><i class="fa fa-user fa-fw"></i></span>
+                <label for="role">
+                  תפקיד :
+                </label>
+                <input type="text"
+                       id="role"
+                       class="form-control"
+                       ngModel
+                       name="role">
+              </div>
+            </div>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-handshake-o fa-fw"></i> מגייס: </span><br>
+            <div class="form-group">
+              <div class="col-md-5" >
+                <span class="text-muted"><i class="fa fa-handshake-o fa-fw"></i></span>
+                <label for="recruiter"> מגייס : </label>
+                <input type="text"
+                       id="recruiter"
+                       class="form-control"
+                       ngModel
+                       name="recruiter">
+              </div>
+            </div>
+           <div class="bot-border"></div>
+            <div class="form-group">
+              <div class="col-md-5" >
+                <span class="text-muted"><i class="fa fa-envelope fa-fw"></i></span>
+                <label for="email"> דואר אלקטרוני : </label>
+                <input type="text"
+                       id="email"
+                       class="form-control"
+                       ngModel
+                       name="email">
+              </div>
+            </div>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-envelope fa-fw"></i> דואר אלקטרוני: </span> <br>
-            <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-star fa-fw"></i> דירוג: </span><app-rating [currentRate]="3"></app-rating><br>
+            <div class="form-group">
+              <div class="col-md-5">
+                <span class="text-muted"><i class="fa fa-star fa-fw"></i> דירוג: </span><app-rating [currentRate]="0"></app-rating><br>
+              </div>
+            </div>
             <div class="bot-border"></div>
             <span class="text-muted"><i class="fa fa-comment fa-fw"></i> הערות: </span> <br>
             <div class="bot-border"></div>
@@ -34,7 +128,21 @@
             <div class="bot-border"></div>
             <a href="javascript:void(0);"><span ><i class="fa fa-files-o fa-fw"></i> קבצים קשורים </span></a><br>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-calendar-times-o fa-fw"></i> תאריך הצטרפות: </span> <br>
+            <br>
+            <div class="form-group">
+              <div class="col-md-5" style="margin-top: -25px">
+                <span class="text-muted"><i class="fa fa-birthday-cake fa-fw"></i>  </span>
+                <label for="joinedDate">תאריך הצטרפות:</label>
+                <div class="input-group datepicker-input">
+                  <button class="input-group-addon" (click)="d.toggle()" type="button">
+                    <span class="fa fa-calendar"></span>
+                  </button>
+                  <input class="form-control" placeholder="dd-mm-yyy"
+                         name="joinedDate" id="joinedDate" ngModel ngbDatepicker #d="ngbDatepicker">
+                </div>
+              </div>
+            </div>
+             <br>
           </div>
           <div class="col-md-2 text-center">
             <img class="img-circle avatar avatar-original profile-image1"   style="-webkit-user-select:none;
@@ -43,7 +151,7 @@
         </div>
       </div>
       <div class="card-footer">
-        <button type="button" class="btn btn-secondary" >חזור</button>
+        <button type="submit" class="btn btn-secondary" >הוסף</button>
       </div>
     </div>
   </div>
