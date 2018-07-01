@@ -15,6 +15,7 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
   @ViewChild(CommentsModalComponent) commentsdDetails: CommentsModalComponent ;
   investorObject: Investor;
   prametersSubscription: Subscription;
+  private _message;
   id: string;
 
   constructor(private investorService: InvestorsService, private route: ActivatedRoute) {
@@ -47,6 +48,28 @@ console.log('getting investor data');
 
   }
   openExtendedDetailsModal(comments) {
-    this.commentsdDetails.altOpen(this.investorObject.comments);
+    if (this.investorObject.comments ) {
+      this.commentsdDetails.altOpen(this.investorObject.comments);
+    } else {console.log('no comments');
+      this.showAlert("אין הערות למשקיע זה"); }
   }
+  showAlert(message) {
+
+    this.message = message;
+  // Get the snackbar DIV
+  var x = document.getElementById("snackbar");
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+set message(message) {
+    this._message = message;
+}
+get message(): string {
+    return this._message;
+}
 }
