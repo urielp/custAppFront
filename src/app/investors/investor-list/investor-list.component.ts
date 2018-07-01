@@ -17,6 +17,7 @@ export class InvestorListComponent implements OnInit {
     this.investorsService.getInvestors().subscribe((results) => {
       if (results.success) {
         this.investorsList = results.data.docs as Investor[];
+        console.log( typeof this.investorsList[0].comments);
       }
     });
   }

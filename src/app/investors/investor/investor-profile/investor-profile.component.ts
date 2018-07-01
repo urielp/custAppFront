@@ -36,14 +36,13 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
   getInvestorData() {
     this.investorService.getSingleInvestorById(this.id).subscribe(
       data => {
-        this.investorObject = data.data;
-        console.log(this.investorObject.commentsTest);
+        this.investorObject = data.data as Investor;
+        console.log(this.investorObject.lastName);
+        this.investorObject.comments = data.data.commentsTest;
       });
   }
-  openExtendedDetailsModal(comments) {
-      console.log("***" + this.investorObject.comments);// undefined
-      console.log(this.investorObject.commentsTest);// defined
-      //this.commentsdDetails.altOpen(comments);
+  openExtendedDetailsModal() {
+      this.commentsdDetails.altOpen(this.investorObject.comments);
   }
 
 }

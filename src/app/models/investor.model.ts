@@ -9,7 +9,7 @@ class Investor {
   private birthDate: Date;
   private picture: string;
   private company: string;
-  private commentsTest: [any];
+  private _commentsTest: [any];
   private role: string;
   private joinDate: Date;
   private rank: number;
@@ -28,17 +28,17 @@ class Investor {
     this.birthDate = birthDate;
     this.picture = picture;
     this.company = company;
-    this.comments = commentsTest;
+    this._commentsTest = commentsTest;
     this.role = role;
     this.joinDate = joinDate;
     this.rank = rank;
   }
 
    get comments(): [any] {
-    return this.commentsTest;
+    return this._commentsTest;
   }
-  set comments(comments: [any]) {
-    this.commentsTest = comments;
+  set comments(commentsTest: [any]) {
+    this._commentsTest = commentsTest;
   }
   get firstName(): string {
     return this._firstName;
