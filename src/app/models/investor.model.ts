@@ -1,7 +1,7 @@
 class Investor {
-
-  private firstName: string;
-  private lastName: string;
+  public _id: string;
+  private _firstName: string;
+  private _lastName: string;
   private cellPhoneNumber: string;
   private officePhoneNumber: string;
   private address: string;
@@ -9,18 +9,18 @@ class Investor {
   private birthDate: Date;
   private picture: string;
   private company: string;
-  private commentsTest: [];
+  private commentsTest: [any];
   private role: string;
   private joinDate: Date;
   private rank: number;
 
-  constructor(firstName: string, lastName: string, cellPhoneNumber: string,
+  constructor(_id: string , firstName: string, lastName: string, cellPhoneNumber: string,
               officePhoneNumber: string, address: string, email: string,
               birthDate: Date, picture: string, company: string, commentsTest: [any],
               role: string, joinDate: Date , rank: number) {
-
-    this.firstName = firstName;
-    this.lastName = lastName;
+    this._id = _id;
+    this._firstName = firstName;
+    this._lastName = lastName;
     this.cellPhoneNumber = cellPhoneNumber;
     this.officePhoneNumber = officePhoneNumber;
     this.address = address;
@@ -32,6 +32,16 @@ class Investor {
     this.role = role;
     this.joinDate = joinDate;
     this.rank = rank;
+  }
+
+  get comments(): [any] {
+    return this.commentsTest;
+  }
+  get firstName(): string {
+    return this._firstName;
+  }
+  get lastName(): string {
+    return this._lastName;
   }
 }
 

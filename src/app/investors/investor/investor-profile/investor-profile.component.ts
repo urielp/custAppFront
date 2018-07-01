@@ -43,10 +43,10 @@ console.log('getting investor data');
       });
   }
 
-  getTheArray(){
+  getTheArray() {
 
   }
   openExtendedDetailsModal(comments) {
-    this.commentsdDetails.altOpen(this.investorObject.commentsTest);
+    this.commentsdDetails.altOpen(this.investorObject.comments);
   }
 }
