@@ -1,7 +1,7 @@
 <div class="row" *ngIf="investorObject">
   <div class="col col-sm-8">
     <div class="card mt-3">
-      <div class="card-header"><h1 class="tital"></h1>{{investorObject.firstName}}</div>
+      <div class="card-header"><h1 class="titel">{{investorObject.firstName}}</h1></div>
       <div class="card-body">
         <div class="row" >
           <div class="col-md-10 text-right">
@@ -23,7 +23,8 @@
             <div class="bot-border"></div>
             <span class="text-muted"><i class="fa fa-star fa-fw"></i> דירוג: </span><app-rating [currentRate]=investorObject.rank></app-rating><br>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-comment fa-fw"></i> הערות: </span> <br>
+            <!--<span class="text-muted"><i class="fa fa-comment fa-fw" (click)="openExtendedDetailsModal()"> </i> הערות </span> <br>-->
+            <a href="javascript:void(0);" (click)="openExtendedDetailsModal(investorObject.commentsTest)"><span ><i class="fa fa-comment fa-fw"></i> הערות </span></a><br>
             <div class="bot-border"></div>
             <a href="javascript:void(0);"><span ><i class="fa fa-industry fa-fw"></i> פרוייקטים שייכים </span></a><br>
             <div class="bot-border"></div>
@@ -43,4 +44,6 @@
     </div>
   </div>
 </div>
-
+<div>
+  <app-comments-modal></app-comments-modal>
+</div>

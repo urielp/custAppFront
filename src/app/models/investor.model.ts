@@ -9,13 +9,14 @@ class Investor {
   private birthDate: Date;
   private picture: string;
   private company: string;
+  private commentsTest: [];
   private role: string;
   private joinDate: Date;
   private rank: number;
 
   constructor(_id: string , firstName: string, lastName: string, cellPhoneNumber: string,
               officePhoneNumber: string, address: string, email: string,
-              birthDate: Date, picture: string, company: string,
+              birthDate: Date, picture: string, company: string, commentsTest: [any],
               role: string, joinDate: Date , rank: number) {
     this._id = _id;
     this.firstName = firstName;
@@ -27,6 +28,7 @@ class Investor {
     this.birthDate = birthDate;
     this.picture = picture;
     this.company = company;
+    this.commentsTest = commentsTest;
     this.role = role;
     this.joinDate = joinDate;
     this.rank = rank;

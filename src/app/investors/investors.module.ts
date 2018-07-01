@@ -9,21 +9,26 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { InvestorProfileComponent } from './investor/investor-profile/investor-profile.component';
 import {RatingComponent} from '../component/rating/rating.component';
 import { AddInvestorComponent } from './investor/add-investor/add-investor.component';
-
+import { CommentsModalComponent } from '../component/comments-modal/comments-modal.component';
+import { FormsModule } from '@angular/forms';
+import {DatePickerComponent} from '../component/date-picker/date-picker.component';
 @NgModule({
   imports: [
     CommonModule,
     InvestorsRoutingModule,
+    FormsModule,
     NgbModule.forRoot()
   ],
   declarations: [
+    DatePickerComponent,
     RatingComponent,
     InvestorsComponent,
     InvestorListComponent,
     InvestorComponent,
     InvestorModalComponent,
     InvestorProfileComponent,
-    AddInvestorComponent
+    AddInvestorComponent,
+    CommentsModalComponent
   ]
 })
 export class InvestorsModule {}
