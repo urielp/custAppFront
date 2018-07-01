@@ -1,5 +1,5 @@
 class Investor {
-
+  public _id: string;
   private firstName: string;
   private lastName: string;
   private cellPhoneNumber: string;
@@ -13,11 +13,11 @@ class Investor {
   private joinDate: Date;
   private rank: number;
 
-  constructor(firstName: string, lastName: string, cellPhoneNumber: string,
+  constructor(_id: string , firstName: string, lastName: string, cellPhoneNumber: string,
               officePhoneNumber: string, address: string, email: string,
               birthDate: Date, picture: string, company: string,
               role: string, joinDate: Date , rank: number) {
-
+    this._id = _id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.cellPhoneNumber = cellPhoneNumber;
