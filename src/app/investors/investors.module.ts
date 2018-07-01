@@ -12,6 +12,8 @@ import { AddInvestorComponent } from './investor/add-investor/add-investor.compo
 import { CommentsModalComponent } from '../component/comments-modal/comments-modal.component';
 import { FormsModule } from '@angular/forms';
 import {DatePickerComponent} from '../component/date-picker/date-picker.component';
+import {CommentsComponent} from './investor/comments/comments.component';
+import {ModalComponent} from '../component/shared/modal/modal.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -20,6 +22,7 @@ import {DatePickerComponent} from '../component/date-picker/date-picker.componen
     NgbModule.forRoot()
   ],
   declarations: [
+    CommentsModalComponent,
     DatePickerComponent,
     RatingComponent,
     InvestorsComponent,
@@ -28,7 +31,9 @@ import {DatePickerComponent} from '../component/date-picker/date-picker.componen
     InvestorModalComponent,
     InvestorProfileComponent,
     AddInvestorComponent,
-    CommentsModalComponent
+    CommentsComponent,
+    ModalComponent
+
   ]
 })
 export class InvestorsModule {}
