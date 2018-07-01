@@ -1,9 +1,10 @@
-import {Component, Input, OnInit, OnDestroy, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, OnDestroy, ViewChild, EventEmitter, Output} from '@angular/core';
 import Investor from '../../../models/investor.model';
 import {InvestorsService} from '../investors-service';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {CommentsModalComponent} from '../../../component/comments-modal/comments-modal.component';
+import {MessageService} from '../../../component/shared/messageService';
 
 @Component({
   selector: 'app-investor-profile',
@@ -15,7 +16,6 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
   @ViewChild(CommentsModalComponent) commentsdDetails: CommentsModalComponent ;
   investorObject: Investor;
   prametersSubscription: Subscription;
-  private _message;
   id: string;
 
   constructor(private investorService: InvestorsService, private route: ActivatedRoute) {
@@ -25,51 +25,25 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
     this.prametersSubscription = this.route.params.subscribe(
       (params: Params) => {
         this.id = params.id;
-       console.log(this.id);
         this.getInvestorData();
       }
     );
   }
-
   ngOnDestroy() {
     this.prametersSubscription.unsubscribe();
   }
 
   getInvestorData() {
-console.log('getting investor data');
     this.investorService.getSingleInvestorById(this.id).subscribe(
       data => {
-        console.log(data.data) ;
         this.investorObject = data.data;
+        console.log(this.investorObject.commentsTest);
       });
   }
-
-  getTheArray() {
-
-  }
   openExtendedDetailsModal(comments) {
-    if (this.investorObject.comments ) {
-      this.commentsdDetails.altOpen(this.investorObject.comments);
-    } else {console.log('no comments');
-      this.showAlert("אין הערות למשקיע זה"); }
+      console.log("***" + this.investorObject.comments);// undefined
+      console.log(this.investorObject.commentsTest);// defined
+      //this.commentsdDetails.altOpen(comments);
   }
-  showAlert(message) {
 
-    this.message = message;
-  // Get the snackbar DIV
-  var x = document.getElementById("snackbar");
-
-  // Add the "show" class to DIV
-  x.className = "show";
-
-  // After 3 seconds, remove the show class from DIV
-  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-}
-
-set message(message) {
-    this._message = message;
-}
-get message(): string {
-    return this._message;
-}
 }

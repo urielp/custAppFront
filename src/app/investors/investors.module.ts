@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import {DatePickerComponent} from '../component/date-picker/date-picker.component';
 import {CommentsComponent} from './investor/comments/comments.component';
 import {ModalComponent} from '../component/shared/modal/modal.component';
+import {ToastsComponent} from '../component/shared/toasts/toasts.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -32,7 +33,8 @@ import {ModalComponent} from '../component/shared/modal/modal.component';
     InvestorProfileComponent,
     AddInvestorComponent,
     CommentsComponent,
-    ModalComponent
+    ModalComponent,
+    ToastsComponent
 
   ]
 })
