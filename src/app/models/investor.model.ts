@@ -28,14 +28,17 @@ class Investor {
     this.birthDate = birthDate;
     this.picture = picture;
     this.company = company;
-    this.commentsTest = commentsTest;
+    this.comments = commentsTest;
     this.role = role;
     this.joinDate = joinDate;
     this.rank = rank;
   }
 
-  get comments(): [any] {
+   get comments(): [any] {
     return this.commentsTest;
+  }
+  set comments(comments: [any]) {
+    this.commentsTest = comments;
   }
   get firstName(): string {
     return this._firstName;
