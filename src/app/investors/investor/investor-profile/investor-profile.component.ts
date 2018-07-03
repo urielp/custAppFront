@@ -15,6 +15,7 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
 
   @ViewChild(CommentsModalComponent) commentsdDetails: CommentsModalComponent ;
   investorObject: Investor;
+  test:any;
   prametersSubscription: Subscription;
   id: string;
 
@@ -36,9 +37,9 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
   getInvestorData() {
     this.investorService.getSingleInvestorById(this.id).subscribe(
       data => {
-        this.investorObject = data.data as Investor;
-        console.log(this.investorObject.lastName);
-        this.investorObject.comments = data.data.commentsTest;
+        this.investorObject = new Investor();
+        Object.assign(this.investorObject, data.data as Investor);
+        console.log(this.investorObject);
       });
   }
   openExtendedDetailsModal() {
