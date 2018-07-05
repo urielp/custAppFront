@@ -1,5 +1,11 @@
 :host /deep/ .datepicker-input {
   .custom-select {
     width: 50%;
+
   }
+}
+.dropdown-menu.show.test {
+  padding: 0px;
+  top: -100px;
+  left: -250px;
 }

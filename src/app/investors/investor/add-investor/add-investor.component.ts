@@ -1,5 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import Investor from '../../../models/investor.model';
+import {InvestorsService} from '../investors-service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {MessageService} from '../../../component/shared/messageService';
 
 @Component({
   selector: 'app-add-investor',
@@ -8,12 +12,30 @@ import {NgForm} from '@angular/forms';
 })
 export class AddInvestorComponent implements OnInit {
 
-  constructor() { }
+  _investor: Investor;
+   returnUrl: string;
+  constructor(private investorsService: InvestorsService , private route: ActivatedRoute,
+              private router: Router ,
+              private _messageService: MessageService) { }
 @ViewChild('f') addInvestorForm: NgForm;
   ngOnInit() {
+    this._investor = new Investor();
+    this.returnUrl = this.route.snapshot.queryParams['relativeTo'] || '/';
   }
   onSubmit(form: NgForm) {
-    console.log(form);
+     this.investorsService.addInvestor(this._investor).subscribe((results) => {
+      if (results.success) {
+        this.investorsService.investorsList.push(this._investor);
+        this._messageService.filter(results.message);
+        setTimeout(() => {
+          this.router.navigate(['investorsList'], { relativeTo: this.route.parent});
+        }, 3000);
+      }
+    });
   }
 
+
+  clickFilter(message: string): void {
+    this._messageService.filter(message);
+  }
 }
