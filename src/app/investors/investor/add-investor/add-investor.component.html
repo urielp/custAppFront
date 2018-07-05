@@ -15,7 +15,13 @@
                      id="firstName"
                      class="form-control"
                      [(ngModel)]="_investor.firstName"
-                     name="firstName">
+                     required
+                     name="firstName"
+                     #name="ngModel">
+              </div>
+              <div  [hidden]="name.valid || name.pristine"
+                   class="alert alert-danger col-md-5">
+                Name is required
               </div>
             </div>
             <div class="bot-border"></div>
@@ -27,8 +33,14 @@
                        id="lastName"
                        class="form-control"
                        [(ngModel)]="_investor.lastName"
-                       name="lastName">
+                       name="lastName"
+                       #name="ngModel"
+                       required>
                 </div>
+              <div  [hidden]="name.valid || name.pristine"
+                    class="alert alert-danger col-md-5">
+                Last Name is required
+              </div>
             </div>
             </div>
             <div class="bot-border"></div>
@@ -40,7 +52,13 @@
                      id="cellPhone"
                      class="form-control"
                      [(ngModel)]="_investor.cellPhoneNumber"
-                     name="cellPhone">
+                     name="cellPhone"
+                    required
+                    #name="ngModel">
+              </div>
+              <div  [hidden]="name.valid || name.pristine"
+                    class="alert alert-danger col-md-5">
+                Cell Phone Number is required
               </div>
             </div>
             <div class="bot-border"></div>
@@ -67,7 +85,13 @@
                         id="address"
                         class="form-control"
                        [(ngModel)]="_investor.address"
-                        name="address">
+                        name="address"
+                       required
+                       #name="ngModel">
+              </div>
+              <div  [hidden]="name.valid || name.pristine"
+                    class="alert alert-danger col-md-5">
+                Cell Phone Number is required
               </div>
             </div>
             <div class="bot-border"></div>
@@ -104,7 +128,13 @@
                        id="company"
                        class="form-control"
                        [(ngModel)]="_investor.company"
-                       name="company">
+                       name="company"
+                       required
+                       #name="ngModel">
+              </div>
+              <div  [hidden]="name.valid || name.pristine"
+                    class="alert alert-danger col-md-5">
+                Cell Phone Number is required
               </div>
             </div>
             <div class="bot-border"></div>
@@ -118,7 +148,13 @@
                        id="role"
                        class="form-control"
                        [(ngModel)]="_investor.role"
-                       name="role">
+                       name="role"
+                       required
+                       #name="ngModel">
+              </div>
+              <div  [hidden]="name.valid || name.pristine"
+                    class="alert alert-danger col-md-5">
+                Cell Phone Number is required
               </div>
             </div>
             <div class="bot-border"></div>
@@ -130,7 +166,13 @@
                        id="recruiter"
                        class="form-control"
                        ngModel
-                       name="recruiter">
+                       name="recruiter"
+                       required
+                       #name="ngModel">
+              </div>
+              <div  [hidden]="name.valid || name.pristine"
+                    class="alert alert-danger col-md-5">
+                Cell Phone Number is required
               </div>
             </div>
            <div class="bot-border"></div>
@@ -149,7 +191,13 @@
                          id="joinedDate"
                          [(ngModel)]="_investor.joinDate"
                          ngbDatepicker
-                         #jd="ngbDatepicker">
+                         #jd="ngbDatepicker"
+                         required
+                         #name="ngModel">
+                </div>
+                <div  [hidden]="name.valid || name.pristine"
+                      class="alert alert-danger col-md-5">
+                  Cell Phone Number is required
                 </div>
               </div>
             </div>
@@ -162,7 +210,13 @@
                        id="email"
                        class="form-control"
                        [(ngModel)]="_investor.email"
-                       name="email">
+                       name="email"
+                       required
+                       #name="ngModel">
+              </div>
+              <div  [hidden]="name.valid || name.pristine"
+                    class="alert alert-danger col-md-5">
+                Email is required
               </div>
             </div>
             <div class="bot-border"></div>

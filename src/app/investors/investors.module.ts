@@ -15,6 +15,7 @@ import {DatePickerComponent} from '../component/date-picker/date-picker.componen
 import {CommentsComponent} from './investor/comments/comments.component';
 import {ModalComponent} from '../component/shared/modal/modal.component';
 import {ToastsComponent} from '../component/shared/toasts/toasts.component';
+import {PaginationComponent} from '../component/shared/pagination/pagination.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -23,6 +24,7 @@ import {ToastsComponent} from '../component/shared/toasts/toasts.component';
     NgbModule.forRoot()
   ],
   declarations: [
+    PaginationComponent,
     CommentsModalComponent,
     DatePickerComponent,
     RatingComponent,
