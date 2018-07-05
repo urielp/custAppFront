@@ -23,7 +23,7 @@ export class AddInvestorComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['relativeTo'] || '/';
   }
   onSubmit(form: NgForm) {
-     this.investorsService.addInvestor(this._investor).subscribe((results) => {
+    this.investorsService.addInvestor(this._investor).subscribe((results) => {
       if (results.success) {
         this.investorsService.investorsList.push(this._investor);
         this._messageService.filter(results.message);

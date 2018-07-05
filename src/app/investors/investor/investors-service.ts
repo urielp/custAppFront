@@ -17,7 +17,9 @@ export class InvestorsService {
 
   constructor(private httpClient: HttpClient) {
   }
-
+  getListByPage(page: number): Observable<any> {
+    return this.httpClient.get(this.investors_url + '/investors/' + page);
+  }
 
   getInvestors(): Observable<any> {
     return this.httpClient.get(this.investors_url + '/investors');

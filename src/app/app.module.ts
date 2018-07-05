@@ -16,6 +16,7 @@ import { RatingComponent } from './component/rating/rating.component';
 import { DatePickerComponent } from './component/date-picker/date-picker.component';
 import { ToastsComponent } from './component/shared/toasts/toasts.component';
 import {MessageService} from './component/shared/messageService';
+import { PaginationComponent } from './component/shared/pagination/pagination.component';
 
 
 @NgModule({
