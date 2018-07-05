@@ -12,8 +12,6 @@ import { AddInvestorComponent } from './investor/add-investor/add-investor.compo
 import { CommentsModalComponent } from '../component/comments-modal/comments-modal.component';
 import { FormsModule } from '@angular/forms';
 import {DatePickerComponent} from '../component/date-picker/date-picker.component';
-import {CommentsComponent} from './investor/comments/comments.component';
-import {ModalComponent} from '../component/shared/modal/modal.component';
 import {ToastsComponent} from '../component/shared/toasts/toasts.component';
 import {PaginationComponent} from '../component/shared/pagination/pagination.component';
 @NgModule({
@@ -34,8 +32,6 @@ import {PaginationComponent} from '../component/shared/pagination/pagination.com
     InvestorModalComponent,
     InvestorProfileComponent,
     AddInvestorComponent,
-    CommentsComponent,
-    ModalComponent,
     ToastsComponent
 
   ]
