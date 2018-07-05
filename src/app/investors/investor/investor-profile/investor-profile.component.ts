@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, OnDestroy, ViewChild, EventEmitter, Output} from '@angular/core';
 import Investor from '../../../models/investor.model';
 import {InvestorsService} from '../investors-service';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {CommentsModalComponent} from '../../../component/comments-modal/comments-modal.component';
 import {MessageService} from '../../../component/shared/messageService';
@@ -19,7 +19,7 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
   prametersSubscription: Subscription;
   id: string;
 
-  constructor(private investorService: InvestorsService, private route: ActivatedRoute) {
+  constructor(private investorService: InvestorsService, private route: ActivatedRoute,private router: Router) {
   }
 
   ngOnInit() {
@@ -39,11 +39,13 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
       data => {
         this.investorObject = new Investor();
         Object.assign(this.investorObject, data.data as Investor);
-        console.log(this.investorObject);
+        console.log(this.investorObject.comments.length);
       });
   }
   openExtendedDetailsModal() {
       this.commentsdDetails.altOpen(this.investorObject.comments);
   }
-
+  return() {
+    this.router.navigate(['investorsList'], { relativeTo: this.route.parent});
+  }
 }

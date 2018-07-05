@@ -6,6 +6,32 @@
       <div class="card-body">
         <div class="row" >
           <div class="col-md-10 text-right">
+            <div style="border: 1px">
+            <div class="form-group">
+            <div class="col-md-5">
+              <span class="text-muted"> </span>
+              <label for="firstName"> שם פרטי :  </label>
+              <input type="text"
+                     id="firstName"
+                     class="form-control"
+                     [(ngModel)]="_investor.firstName"
+                     name="firstName">
+              </div>
+            </div>
+            <div class="bot-border"></div>
+            <div class="form-group">
+               <div class="col-md-5">
+                <span class="text-muted"> </span>
+                <label for="lastName"> שם משפחה :  </label>
+                <input type="text"
+                       id="lastName"
+                       class="form-control"
+                       [(ngModel)]="_investor.lastName"
+                       name="lastName">
+                </div>
+            </div>
+            </div>
+            <div class="bot-border"></div>
             <div class="form-group">
               <div class="col-md-5">
                 <span class="text-muted">  <i class="fa fa-mobile-phone fa-fw"></i></span>
@@ -13,7 +39,7 @@
               <input type="text"
                      id="cellPhone"
                      class="form-control"
-                     ngModel
+                     [(ngModel)]="_investor.cellPhoneNumber"
                      name="cellPhone">
               </div>
             </div>
@@ -27,7 +53,7 @@
                   <input type="text"
                          id="officePhone"
                          class="form-control"
-                         ngModel
+                         [(ngModel)]="_investor.officePhoneNumber"
                          name="officePhone">
 
               </div>
@@ -40,7 +66,7 @@
                 <input type="text"
                         id="address"
                         class="form-control"
-                        ngModel
+                       [(ngModel)]="_investor.address"
                         name="address">
               </div>
             </div>
@@ -55,11 +81,15 @@
                         <!--ngModel-->
                         <!--name="birthDate">-->
                 <div class="input-group datepicker-input">
-                <button class="input-group-addon" (click)="d.toggle()" type="button">
+                <button class="input-group-addon" (click)="bd.toggle()" type="button">
                   <span class="fa fa-calendar"></span>
                 </button>
-                <input class="form-control" placeholder="dd-mm-yyy"
-                       name="birthDate" id="birthDate" ngModel ngbDatepicker #d="ngbDatepicker">
+                <input class="form-control"
+                       placeholder="dd-mm-yyy"
+                       name="birthDate"
+                       id="birthDate"
+                       [(ngModel)]="_investor.birthDate"
+                       ngbDatepicker #bd="ngbDatepicker">
                 </div>
               </div>
             </div>
@@ -73,7 +103,7 @@
                 <input type="text"
                        id="company"
                        class="form-control"
-                       ngModel
+                       [(ngModel)]="_investor.company"
                        name="company">
               </div>
             </div>
@@ -87,7 +117,7 @@
                 <input type="text"
                        id="role"
                        class="form-control"
-                       ngModel
+                       [(ngModel)]="_investor.role"
                        name="role">
               </div>
             </div>
@@ -104,6 +134,26 @@
               </div>
             </div>
            <div class="bot-border"></div>
+            <br>
+            <div class="form-group">
+              <div class="col-md-5" >
+                <span class="text-muted"><i class="fa fa-birthday-cake fa-fw"></i>  </span>
+                <label for="joinedDate">תאריך הצטרפות:</label>
+                <div class="input-group datepicker-input">
+                  <button class="input-group-addon" (click)="jd.toggle()" type="button">
+                    <span class="fa fa-calendar"></span>
+                  </button>
+                  <input class="form-control test"
+                         placeholder="dd-mm-yyy"
+                         name="joinedDate"
+                         id="joinedDate"
+                         [(ngModel)]="_investor.joinDate"
+                         ngbDatepicker
+                         #jd="ngbDatepicker">
+                </div>
+              </div>
+            </div>
+            <div class="bot-border"></div>
             <div class="form-group">
               <div class="col-md-5" >
                 <span class="text-muted"><i class="fa fa-envelope fa-fw"></i></span>
@@ -111,7 +161,7 @@
                 <input type="text"
                        id="email"
                        class="form-control"
-                       ngModel
+                       [(ngModel)]="_investor.email"
                        name="email">
               </div>
             </div>
@@ -129,19 +179,24 @@
             <a href="javascript:void(0);"><span ><i class="fa fa-files-o fa-fw"></i> קבצים קשורים </span></a><br>
             <div class="bot-border"></div>
             <br>
-            <div class="form-group">
-              <div class="col-md-5" style="margin-top: -25px">
-                <span class="text-muted"><i class="fa fa-birthday-cake fa-fw"></i>  </span>
-                <label for="joinedDate">תאריך הצטרפות:</label>
-                <div class="input-group datepicker-input">
-                  <button class="input-group-addon" (click)="d.toggle()" type="button">
-                    <span class="fa fa-calendar"></span>
-                  </button>
-                  <input class="form-control" placeholder="dd-mm-yyy"
-                         name="joinedDate" id="joinedDate" ngModel ngbDatepicker #d="ngbDatepicker">
-                </div>
-              </div>
-            </div>
+            <!--<div class="form-group">-->
+              <!--<div class="col-md-5" style="margin-top: -25px">-->
+                <!--<span class="text-muted"><i class="fa fa-birthday-cake fa-fw"></i>  </span>-->
+                <!--<label for="joinedDate">תאריך הצטרפות:</label>-->
+                <!--<div class="input-group datepicker-input">-->
+                  <!--<button class="input-group-addon" (click)="jd.toggle()" type="button">-->
+                    <!--<span class="fa fa-calendar"></span>-->
+                  <!--</button>-->
+                  <!--<input class="form-control test"-->
+                         <!--placeholder="dd-mm-yyy"-->
+                         <!--name="joinedDate"-->
+                         <!--id="joinedDate"-->
+                         <!--ngModel-->
+                         <!--ngbDatepicker-->
+                         <!--#jd="ngbDatepicker">-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
              <br>
           </div>
           <div class="col-md-2 text-center">
@@ -156,4 +211,5 @@
     </div>
   </div>
 </div>
+  <app-toasts></app-toasts>
 </form>

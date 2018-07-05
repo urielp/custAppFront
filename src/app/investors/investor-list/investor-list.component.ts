@@ -17,11 +17,12 @@ export class InvestorListComponent implements OnInit {
     this.investorsService.getInvestors().subscribe((results) => {
       if (results.success) {
         this.investorsList = results.data.docs as Investor[];
-        console.log( typeof this.investorsList[0].comments);
+        this.investorsService.investorsList = results.data.docs as Investor[];
+        console.log( this.investorsService.investorsList);
       }
     });
   }
   onLoadProfile() {
-    this.router.navigate(['../addInvestor/'], { relativeTo: this.route });
+    this.router.navigate(['../addInvestor/'], { relativeTo: this.route , queryParams: this.route.url});
   }
 }

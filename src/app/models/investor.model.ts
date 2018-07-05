@@ -1,18 +1,20 @@
 class Investor {
+
+
   public _id: string;
   private _firstName: string;
   private _lastName: string;
-  private cellPhoneNumber: string;
-  private officePhoneNumber: string;
-  private address: string;
-  private email: string;
-  private birthDate: Date;
+  private _cellPhoneNumber: string;
+  private _officePhoneNumber: string;
+  private _address: string;
+  private _email: string;
+  private _birthDate: Date;
   private picture: string;
-  private company: string;
+  private _company: string;
   private commentsTest: [Object];
-  private role: string;
-  private joinDate: Date;
-  private rank: number;
+  private _role: string;
+  private _joinDate: Date;
+  private _rank: number;
 
   //
   // constructor(_id: string , firstName: string, lastName: string, cellPhoneNumber: string,
@@ -53,6 +55,69 @@ constructor() {}
   }
   set lastName(lastName: string) {
    this._lastName = lastName;
+  }
+
+  get cellPhoneNumber(): string {
+    return this._cellPhoneNumber;
+  }
+  get rank(): number {
+    return this._rank;
+  }
+
+  set rank(value: number) {
+    this._rank = value;
+  }
+  get joinDate(): Date {
+    return this._joinDate;
+  }
+
+  set joinDate(value: Date) {
+    this._joinDate = value;
+  }
+  get role(): string {
+    return this._role;
+  }
+
+  set role(value: string) {
+    this._role = value;
+  }
+  get company(): string {
+    return this._company;
+  }
+
+  set company(value: string) {
+    this._company = value;
+  }
+  get birthDate(): Date {
+    return this._birthDate;
+  }
+
+  set birthDate(value: Date) {
+    this._birthDate = value;
+  }
+  get email(): string {
+    return this._email;
+  }
+
+  set email(value: string) {
+    this._email = value;
+  }
+  get address(): string {
+    return this._address;
+  }
+
+  set address(value: string) {
+    this._address = value;
+  }
+  get officePhoneNumber(): string {
+    return this._officePhoneNumber;
+  }
+
+  set officePhoneNumber(value: string) {
+    this._officePhoneNumber = value;
+  }
+  set cellPhoneNumber(value: string) {
+    this._cellPhoneNumber = value;
   }
 }
 
