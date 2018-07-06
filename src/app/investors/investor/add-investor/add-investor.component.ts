@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import Investor from '../../../models/investor.model';
 import {InvestorsService} from '../investors-service';
@@ -14,6 +14,9 @@ export class AddInvestorComponent implements OnInit {
 
   _investor: Investor;
    returnUrl: string;
+
+   @Output()
+   ratingChange = new EventEmitter<{rating: number}>();
   constructor(private investorsService: InvestorsService , private route: ActivatedRoute,
               private router: Router ,
               private _messageService: MessageService) { }
@@ -23,6 +26,7 @@ export class AddInvestorComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['relativeTo'] || '/';
   }
   onSubmit(form: NgForm) {
+    console.log(this._investor);
     this.investorsService.addInvestor(this._investor).subscribe((results) => {
       if (results.success) {
         this.investorsService.investorsList.push(this._investor);
@@ -34,7 +38,10 @@ export class AddInvestorComponent implements OnInit {
     });
   }
 
-
+onRateChange(rate) {
+    this._investor.rating = rate;
+    console.log(this._investor);
+  }
   clickFilter(message: string): void {
     this._messageService.filter(message);
   }

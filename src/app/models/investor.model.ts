@@ -1,6 +1,5 @@
 class Investor {
 
-
   public _id: string;
   private _firstName: string;
   private _lastName: string;
@@ -13,8 +12,10 @@ class Investor {
   private _company: string;
   private commentsTest: [Object];
   private _role: string;
+  private _rating: number;
   private _joinDate: Date;
   private _rank: number;
+  private _recruiter: string;
 
   //
   // constructor(_id: string , firstName: string, lastName: string, cellPhoneNumber: string,
@@ -118,6 +119,21 @@ constructor() {}
   }
   set cellPhoneNumber(value: string) {
     this._cellPhoneNumber = value;
+  }
+
+  get rating(): number {
+    return this._rating;
+  }
+
+  set rating(value: number) {
+    this._rating = value;
+  }
+  get recruiter(): string {
+    return this._recruiter;
+  }
+
+  set recruiter(value: string) {
+    this._recruiter = value;
   }
 }
 

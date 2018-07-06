@@ -34,7 +34,7 @@ export class InvestorListComponent implements OnInit {
     this.router.navigate(['../addInvestor/'], { relativeTo: this.route , queryParams: this.route.url});
   }
   getPage(page: number) {
-    console.log(page);
+
    this.investorsService.getListByPage(page).subscribe((investors) => {
      if (investors.success) {
        this.investorsList = investors.data.docs as Investor[];

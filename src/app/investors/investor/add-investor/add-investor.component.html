@@ -2,7 +2,7 @@
 <div class="row" >
   <div class="col col-sm-8">
     <div class="card mt-3">
-      <div class="card-header"><h1 class="tital"></h1></div>
+      <div class="card-header"><h4 class="titel">טופס צירוף משקיע חדש </h4></div>
       <div class="card-body">
         <div class="row" >
           <div class="col-md-10 text-right">
@@ -17,11 +17,11 @@
                      [(ngModel)]="_investor.firstName"
                      required
                      name="firstName"
-                     #name="ngModel">
+                     #firstName="ngModel">
               </div>
-              <div  [hidden]="name.valid || name.pristine"
+              <div  [hidden]="firstName.valid || firstName.pristine"
                    class="alert alert-danger col-md-5">
-                Name is required
+                חובה להזין שם פרטי
               </div>
             </div>
             <div class="bot-border"></div>
@@ -34,12 +34,12 @@
                        class="form-control"
                        [(ngModel)]="_investor.lastName"
                        name="lastName"
-                       #name="ngModel"
+                       #lastName="ngModel"
                        required>
                 </div>
-              <div  [hidden]="name.valid || name.pristine"
+              <div  [hidden]="lastName.valid || lastName.pristine "
                     class="alert alert-danger col-md-5">
-                Last Name is required
+                חובה להזין שם משפחה
               </div>
             </div>
             </div>
@@ -54,11 +54,11 @@
                      [(ngModel)]="_investor.cellPhoneNumber"
                      name="cellPhone"
                     required
-                    #name="ngModel">
+                    #cellPhone="ngModel">
               </div>
-              <div  [hidden]="name.valid || name.pristine"
+              <div  [hidden]="cellPhone.valid || cellPhone.pristine"
                     class="alert alert-danger col-md-5">
-                Cell Phone Number is required
+                חובה להזין מספר טלפון
               </div>
             </div>
             <div class="bot-border"></div>
@@ -73,7 +73,6 @@
                          class="form-control"
                          [(ngModel)]="_investor.officePhoneNumber"
                          name="officePhone">
-
               </div>
               </div>
             <div class="bot-border"></div>
@@ -87,11 +86,11 @@
                        [(ngModel)]="_investor.address"
                         name="address"
                        required
-                       #name="ngModel">
+                       #address="ngModel">
               </div>
-              <div  [hidden]="name.valid || name.pristine"
+              <div  [hidden]="address.valid || address.pristine"
                     class="alert alert-danger col-md-5">
-                Cell Phone Number is required
+                חובה להזין כתובת
               </div>
             </div>
             <div class="bot-border"></div>
@@ -99,11 +98,6 @@
               <div class="col-md-5">
                 <span class="text-muted"><i class="fa fa-birthday-cake fa-fw"></i>  </span>
                 <label for="birthDate">תאריך לידה:</label>
-                <!--<input type="date"-->
-                        <!--id="birthDate"-->
-                        <!--class="form-control"-->
-                        <!--ngModel-->
-                        <!--name="birthDate">-->
                 <div class="input-group datepicker-input">
                 <button class="input-group-addon" (click)="bd.toggle()" type="button">
                   <span class="fa fa-calendar"></span>
@@ -130,11 +124,11 @@
                        [(ngModel)]="_investor.company"
                        name="company"
                        required
-                       #name="ngModel">
+                       #company="ngModel">
               </div>
-              <div  [hidden]="name.valid || name.pristine"
+              <div  [hidden]="company.valid || company.pristine"
                     class="alert alert-danger col-md-5">
-                Cell Phone Number is required
+                חובה להזין שם חברה
               </div>
             </div>
             <div class="bot-border"></div>
@@ -150,11 +144,11 @@
                        [(ngModel)]="_investor.role"
                        name="role"
                        required
-                       #name="ngModel">
+                       #role="ngModel">
               </div>
-              <div  [hidden]="name.valid || name.pristine"
+              <div  [hidden]="role.valid || role.pristine"
                     class="alert alert-danger col-md-5">
-                Cell Phone Number is required
+                חובה להזין תפקיד
               </div>
             </div>
             <div class="bot-border"></div>
@@ -165,14 +159,14 @@
                 <input type="text"
                        id="recruiter"
                        class="form-control"
-                       ngModel
-                       name="recruiter"
+                       [(ngModel)]="_investor.recruiter"
+                       name = "recruiter"
                        required
-                       #name="ngModel">
+                       #recruiter="ngModel">
               </div>
-              <div  [hidden]="name.valid || name.pristine"
+              <div  [hidden]="recruiter.valid || recruiter.pristine"
                     class="alert alert-danger col-md-5">
-                Cell Phone Number is required
+                חובה להזין שם מגייס
               </div>
             </div>
            <div class="bot-border"></div>
@@ -193,11 +187,11 @@
                          ngbDatepicker
                          #jd="ngbDatepicker"
                          required
-                         #name="ngModel">
+                         #joinDate="ngModel">
                 </div>
-                <div  [hidden]="name.valid || name.pristine"
+                <div  [hidden]="joinDate.valid || joinDate.pristine|| joinDate.touched"
                       class="alert alert-danger col-md-5">
-                  Cell Phone Number is required
+                  חובה להזין תאריך הצטרפות
                 </div>
               </div>
             </div>
@@ -206,61 +200,48 @@
               <div class="col-md-5" >
                 <span class="text-muted"><i class="fa fa-envelope fa-fw"></i></span>
                 <label for="email"> דואר אלקטרוני : </label>
-                <input type="text"
+                <input type="email"
                        id="email"
                        class="form-control"
                        [(ngModel)]="_investor.email"
                        name="email"
                        required
-                       #name="ngModel">
+                       [email]="true"
+                       #email="ngModel">
               </div>
-              <div  [hidden]="name.valid || name.pristine"
+              <div  [hidden]="email.valid || email.pristine"
                     class="alert alert-danger col-md-5">
-                Email is required
+                חובה להזין כתובת אימייל \כתובת אימייל תקינה
               </div>
             </div>
             <div class="bot-border"></div>
             <div class="form-group">
               <div class="col-md-5">
-                <span class="text-muted"><i class="fa fa-star fa-fw"></i> דירוג: </span><app-rating [currentRate]="0"></app-rating><br>
+                <span class="text-muted"><i class="fa fa-star fa-fw"></i> דירוג: </span>
+                <app-rating ([currentRate])="0" (ratingValue)="onRateChange($event)" >
+
+                </app-rating><br>
               </div>
             </div>
             <div class="bot-border"></div>
-            <span class="text-muted"><i class="fa fa-comment fa-fw"></i> הערות: </span> <br>
+            <span class="text-muted"><i class="fa fa-comment fa-fw"></i> הערות </span> <br>
             <div class="bot-border"></div>
             <a href="javascript:void(0);"><span ><i class="fa fa-industry fa-fw"></i> פרוייקטים שייכים </span></a><br>
             <div class="bot-border"></div>
             <a href="javascript:void(0);"><span ><i class="fa fa-files-o fa-fw"></i> קבצים קשורים </span></a><br>
             <div class="bot-border"></div>
             <br>
-            <!--<div class="form-group">-->
-              <!--<div class="col-md-5" style="margin-top: -25px">-->
-                <!--<span class="text-muted"><i class="fa fa-birthday-cake fa-fw"></i>  </span>-->
-                <!--<label for="joinedDate">תאריך הצטרפות:</label>-->
-                <!--<div class="input-group datepicker-input">-->
-                  <!--<button class="input-group-addon" (click)="jd.toggle()" type="button">-->
-                    <!--<span class="fa fa-calendar"></span>-->
-                  <!--</button>-->
-                  <!--<input class="form-control test"-->
-                         <!--placeholder="dd-mm-yyy"-->
-                         <!--name="joinedDate"-->
-                         <!--id="joinedDate"-->
-                         <!--ngModel-->
-                         <!--ngbDatepicker-->
-                         <!--#jd="ngbDatepicker">-->
-                <!--</div>-->
-              <!--</div>-->
-            <!--</div>-->
              <br>
           </div>
           <div class="col-md-2 text-center">
             <img class="img-circle avatar avatar-original profile-image1"   style="-webkit-user-select:none;
               display:block; margin:auto;" src="http://robohash.org/sitsequiquia.png?size=120x120">
+            <button type="button" class="btn btn-sm btn-default">הוסף תמונה</button>
           </div>
         </div>
       </div>
       <div class="card-footer">
-        <button type="submit" class="btn btn-secondary" >הוסף</button>
+        <button type="submit" class="btn btn-secondary" [disabled]="!f.valid" >הוסף</button>
       </div>
     </div>
   </div>
