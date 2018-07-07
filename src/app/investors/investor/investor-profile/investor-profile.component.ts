@@ -45,6 +45,10 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
   openExtendedDetailsModal() {
       this.commentsdDetails.altOpen(this.investorObject.comments);
   }
+
+  addComment(id) {
+    this.commentsdDetails.addComment(this.investorObject._id);
+  }
   return() {
     this.router.navigate(['investorsList'], { relativeTo: this.route.parent});
   }
