@@ -28,9 +28,24 @@ export class CommentsModalComponent implements OnInit {
    if (this.commentsArray.length > 0) {
        this.open();
      } else {this.clickFilter("אין הערות למשקיע זה"); }
+
   }
   clickFilter(message: string): void {
     this._messageService.filter(message);
+  }
+
+  addComment(id) {
+   // comment.date = new Date();
+   // this.commentsArray.push(comment);
+    console.log(id);
+    this.open();
+  }
+  addNewComment(comment: string) {
+    let newComment = {
+      comment: comment,
+      date: new Date()
+    };
+    this.commentsArray.push(newComment);
   }
 
 }
