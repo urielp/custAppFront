@@ -40,7 +40,6 @@ export class AddInvestorComponent implements OnInit {
 
 onRateChange(rate) {
     this._investor.rating = rate;
-    console.log(this._investor);
   }
   clickFilter(message: string): void {
     this._messageService.filter(message);

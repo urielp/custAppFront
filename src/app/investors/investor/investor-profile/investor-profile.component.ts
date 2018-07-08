@@ -15,7 +15,7 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
 
   @ViewChild(CommentsModalComponent) commentsdDetails: CommentsModalComponent ;
   investorObject: Investor;
-  test:any;
+  test: any;
   prametersSubscription: Subscription;
   id: string;
 
@@ -51,5 +51,13 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
   }
   return() {
     this.router.navigate(['investorsList'], { relativeTo: this.route.parent});
+  }
+
+  onCommentsChange(comments) {
+    console.log(this.investorObject);
+    this.investorObject.comments = comments;
+    this.investorService.updateInvestorComments(this.investorObject).subscribe((results) => {
+      console.log(results);
+    });
   }
 }

@@ -46,7 +46,7 @@
     </div>
   </div>
   <div>
-    <app-comments-modal [test]="investorObject.comments"></app-comments-modal>
+    <app-comments-modal [test]="investorObject.comments" (updateComment)="onCommentsChange($event)"></app-comments-modal>
     <app-toasts></app-toasts>
   </div>
 

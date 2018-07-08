@@ -32,6 +32,10 @@ export class InvestorsService {
     return this.httpClient.post(this.investors_url + '/addInvestor/', investor);
   }
 
+  updateInvestorComments(investor: Investor): Observable <any> {
+    // console.log(this.investors_url + '/investor/investor/update/' + investor._id, investor.comments);
+    return this.httpClient.put(this.investors_url + '/investor/updateComment/' + investor._id, investor.comments);
+  }
   get investorsList(): Investor[] {
     return this._investorsList;
   }
