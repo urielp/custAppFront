@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import {ProjectComponent} from './project/project.component';
 import {ProjectsRoutingModule} from './projects-routing';
 import {ProjectsComponent} from './projects.component';
+import { ProjectsListComponent } from './projects-list/projects-list.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {ProjectsComponent} from './projects.component';
   ],
   declarations: [
     ProjectComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ProjectsListComponent
 
   ]
 })
