@@ -8,8 +8,8 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      // {path: '', redirectTo: 'investors'},
-      { path: 'investors', loadChildren: '../investors/investors.module#InvestorsModule' }
+        { path: 'investors', loadChildren: '../investors/investors.module#InvestorsModule'},
+        { path: 'projects', loadChildren: '../projects/projects.module#ProjectsModule'}
       ]
   }
 ];
