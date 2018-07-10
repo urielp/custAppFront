@@ -31,11 +31,11 @@ body {
   border-bottom: 1px solid #eaedf1;
   h1, h2, h3, h4, h5, h6 {
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.4;
     margin: 0;
     padding: 10px 16px 7px;
-    font-weight: 400;
+    font-weight: 600;
   }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     font-size: 13px;
@@ -462,4 +462,16 @@ a {
 }
 .pagcenter{
   margin-right:320px;
+}
+
+.shadow-nohover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.shadow {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+  }
 }

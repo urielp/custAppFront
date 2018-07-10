@@ -1,29 +1,25 @@
-<h1 class="headerTitle">רשימת פרוייקטים</h1>
+
 <div class="row">
   <div class="col-md-12 ">
     <div class="block">
       <div class="block-title">
-        <div class="block-options text-center ">
+        <div class="block-options text-center">
+          <h1 class="title">רשימת פרוייקטים</h1>
         </div>
       </div>
       <div class="row col-md-12">
-        <div class="col-md-3" >
-          <app-project></app-project>
+        <div class="col-md-3" *ngFor="let project of projects">
+          <app-project [project]= "project"></app-project>
         </div>
-        <div class="col-md-3" >
-          <app-project></app-project>
+        <div class="col-md-3">
+          <app-default></app-default>
         </div>
-        <div class="col-md-3" >
-          <app-project></app-project>
-        </div>
-        <div class="col-md-3" >
-          <app-project></app-project>
-        </div>
-        <div class="col-md-3" >
-          <app-project></app-project>
-        </div>
-        <div class="col-md-3" >
-          <app-project></app-project>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <button type="button"
+                  class="btn btn-secondary"
+          >הוסף</button>
         </div>
       </div>
       <div class="row">

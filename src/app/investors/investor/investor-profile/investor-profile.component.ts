@@ -39,7 +39,6 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
       data => {
         this.investorObject = new Investor();
         Object.assign(this.investorObject, data.data as Investor);
-        console.log(this.investorObject.comments.length);
       });
   }
   openExtendedDetailsModal() {
@@ -57,7 +56,6 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
     console.log(this.investorObject);
     this.investorObject.comments = comments;
     this.investorService.updateInvestorComments(this.investorObject).subscribe((results) => {
-      console.log(results);
     });
   }
 }

@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
 import {InvestorsService} from '../app/investors/investor/investors-service';
 import {MessageService} from './component/shared/messageService';
+import {ProjectService} from './projects/services/projects.service';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import {MessageService} from './component/shared/messageService';
 
   ],
   declarations: [AppComponent],
-  providers: [InvestorsService, MessageService],
+  providers: [InvestorsService, MessageService, ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
