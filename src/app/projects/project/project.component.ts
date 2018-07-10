@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import Investor from '../../models/investor.model';
+import Project from '../../models/project.model';
 
 @Component({
   selector: 'app-project',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
+  @Input() project: Project;
+  singleProject ;
   constructor() { }
 
   ngOnInit() {
+    this.singleProject = new Project();
+    Object.assign(this.singleProject, <Project> this.project);
   }
-
+tets() {
+    // /alert('test');
+}
 }

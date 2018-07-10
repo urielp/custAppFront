@@ -6,6 +6,7 @@ import {ProjectComponent} from './project/project.component';
 import {ProjectsRoutingModule} from './projects-routing';
 import {ProjectsComponent} from './projects.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
+import { DefaultComponent } from './project/default/default.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { ProjectsListComponent } from './projects-list/projects-list.component';
   declarations: [
     ProjectComponent,
     ProjectsComponent,
-    ProjectsListComponent
+    ProjectsListComponent,
+    DefaultComponent
 
   ]
 })

@@ -23,7 +23,6 @@ export class InvestorListComponent implements OnInit {
       if (results.success) {
         this.investorsList = results.data.docs as Investor[];
         this.investorsService.investorsList = results.data.docs as Investor[];
-        console.log( results.data.pages);
         this.pages = results.data.pages;
         this.total = results.data.total;
         this.limit = results.data.limit;
