@@ -19,7 +19,7 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
   prametersSubscription: Subscription;
   id: string;
 
-  constructor(private investorService: InvestorsService, private route: ActivatedRoute,private router: Router) {
+  constructor(private investorService: InvestorsService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
