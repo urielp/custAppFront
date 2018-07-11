@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import Investor from '../../models/investor.model';
 import Project from '../../models/project.model';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-project',
@@ -11,7 +12,7 @@ export class ProjectComponent implements OnInit {
 
   @Input() project: Project;
   singleProject ;
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.singleProject = new Project();
@@ -19,5 +20,8 @@ export class ProjectComponent implements OnInit {
   }
 tets() {
     // /alert('test');
+}
+onDetailsLoad() {
+  this.router.navigate(['../project/', this.singleProject], { relativeTo: this.route });
 }
 }

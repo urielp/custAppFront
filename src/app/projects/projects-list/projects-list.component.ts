@@ -24,7 +24,6 @@ export class ProjectsListComponent implements OnInit,OnDestroy {
           this.pages = results.data.pages;
           this.total = results.data.total;
           this.limit = results.data.limit;
-          console.log( this.projects);
         }
     });
   }
