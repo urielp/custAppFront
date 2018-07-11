@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {a} from '@angular/core/src/render3';
 
 @Injectable()
 export class ProjectService {
@@ -13,5 +14,9 @@ export class ProjectService {
 
   getProjetcs(): Observable<any> {
     return this.httpClient.get(this.projects_url);
+  }
+
+  getProjectById(projectId): Observable <any> {
+    return this.httpClient.get(this.projects_url + '/projectDetails/' + projectId);
   }
 }
