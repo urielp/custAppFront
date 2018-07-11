@@ -22,6 +22,6 @@ tets() {
     // /alert('test');
 }
 onDetailsLoad() {
-  this.router.navigate(['../project/', this.singleProject], { relativeTo: this.route });
+  this.router.navigate(['../project/', this.singleProject.id], { relativeTo: this.route });
 }
 }
