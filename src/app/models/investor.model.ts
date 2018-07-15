@@ -10,6 +10,7 @@ class Investor {
   private _birthDate: Date;
   private picture: string;
   private _company: string;
+  private _investorAssociatedProjects: [string];
   private commentsTest: [Object];
   private _role: string;
   private _rating: number;
@@ -134,6 +135,13 @@ constructor() {}
 
   set recruiter(value: string) {
     this._recruiter = value;
+  }
+  get investorAssociatedProjects(): [string] {
+    return this._investorAssociatedProjects;
+  }
+
+  set investorAssociatedProjects(value: [string]) {
+    this._investorAssociatedProjects = value;
   }
 }
 

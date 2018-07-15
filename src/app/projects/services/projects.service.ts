@@ -19,4 +19,9 @@ export class ProjectService {
   getProjectById(projectId): Observable <any> {
     return this.httpClient.get(this.projects_url + '/projectDetails/' + projectId);
   }
+
+  getinvestorAssociatedProjects(projects) {
+    console.log(projects);
+    return this.httpClient.get(this.projects_url + '/associatedProjects/', {params: {projects: projects}});
+  }
 }
