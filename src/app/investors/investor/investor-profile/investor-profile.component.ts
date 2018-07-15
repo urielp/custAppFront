@@ -5,6 +5,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {CommentsModalComponent} from '../../../component/comments-modal/comments-modal.component';
 import {MessageService} from '../../../component/shared/messageService';
+import {ProjectService} from '../../../projects/services/projects.service';
 
 @Component({
   selector: 'app-investor-profile',
@@ -18,8 +19,8 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
   test: any;
   prametersSubscription: Subscription;
   id: string;
-
-  constructor(private investorService: InvestorsService, private route: ActivatedRoute, private router: Router) {
+  constructor(private investorService: InvestorsService, private projectService: ProjectService ,
+private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
@@ -39,7 +40,18 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
       data => {
         this.investorObject = new Investor();
         Object.assign(this.investorObject, data.data as Investor);
+        console.log(this.investorObject.investorAssociatedProjects);
+        if (this.investorObject.investorAssociatedProjects) {
+          //this.getinvestorAssociatedProjects(this.investorObject.investorAssociatedProjects);
+        }
       });
+  }
+getProjectTest() {
+    this.getinvestorAssociatedProjects(this.investorObject.investorAssociatedProjects);
+}
+  getinvestorAssociatedProjects(projects) {
+    this.projectService.getinvestorAssociatedProjects(projects).subscribe((results) => {
+    });
   }
   openExtendedDetailsModal() {
       this.commentsdDetails.altOpen(this.investorObject.comments);
