@@ -6,6 +6,7 @@ import {Subscription} from 'rxjs';
 import {CommentsModalComponent} from '../../../component/comments-modal/comments-modal.component';
 import {MessageService} from '../../../component/shared/messageService';
 import {ProjectService} from '../../../projects/services/projects.service';
+import Project from '../../../models/project.model';
 
 @Component({
   selector: 'app-investor-profile',
@@ -16,6 +17,7 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
 
   @ViewChild(CommentsModalComponent) commentsdDetails: CommentsModalComponent ;
   investorObject: Investor;
+  _projects;
   test: any;
   prametersSubscription: Subscription;
   id: string;
@@ -40,7 +42,6 @@ private route: ActivatedRoute, private router: Router) {
       data => {
         this.investorObject = new Investor();
         Object.assign(this.investorObject, data.data as Investor);
-        console.log(this.investorObject.investorAssociatedProjects);
         if (this.investorObject.investorAssociatedProjects) {
           //this.getinvestorAssociatedProjects(this.investorObject.investorAssociatedProjects);
         }
@@ -48,9 +49,16 @@ private route: ActivatedRoute, private router: Router) {
   }
 getProjectTest() {
     this.getinvestorAssociatedProjects(this.investorObject.investorAssociatedProjects);
+
 }
   getinvestorAssociatedProjects(projects) {
     this.projectService.getinvestorAssociatedProjects(projects).subscribe((results) => {
+     this._projects = new Array();
+      let p =new Project();
+       results.data.map((proj) => {
+        this._projects.push(Object.assign(p, proj as Project));
+      });
+      console.log(this._projects);
     });
   }
   openExtendedDetailsModal() {
@@ -65,7 +73,6 @@ getProjectTest() {
   }
 
   onCommentsChange(comments) {
-    console.log(this.investorObject);
     this.investorObject.comments = comments;
     this.investorService.updateInvestorComments(this.investorObject).subscribe((results) => {
     });
