@@ -8,6 +8,7 @@ import {ProjectsComponent} from './projects.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
 import { DefaultComponent } from './project/default/default.component';
 import { ProjectdetailsComponent } from './project/projectdetails/projectdetails.component';
+import { ProjectcarouselComponent } from './projectcarousel/projectcarousel.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,6 @@ import { ProjectdetailsComponent } from './project/projectdetails/projectdetails
     ProjectsListComponent,
     DefaultComponent,
     ProjectdetailsComponent
-
   ]
 })
 export class ProjectsModule {}

@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import {DatePickerComponent} from '../component/date-picker/date-picker.component';
 import {ToastsComponent} from '../component/shared/toasts/toasts.component';
 import {PaginationComponent} from '../component/shared/pagination/pagination.component';
+import {ProjectcarouselComponent} from '../projects/projectcarousel/projectcarousel.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -32,7 +33,8 @@ import {PaginationComponent} from '../component/shared/pagination/pagination.com
     InvestorModalComponent,
     InvestorProfileComponent,
     AddInvestorComponent,
-    ToastsComponent
+    ToastsComponent,
+    ProjectcarouselComponent
 
   ]
 })

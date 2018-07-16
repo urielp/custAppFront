@@ -7,6 +7,7 @@ import {CommentsModalComponent} from '../../../component/comments-modal/comments
 import {MessageService} from '../../../component/shared/messageService';
 import {ProjectService} from '../../../projects/services/projects.service';
 import Project from '../../../models/project.model';
+import {ProjectcarouselComponent} from '../../../projects/projectcarousel/projectcarousel.component';
 
 @Component({
   selector: 'app-investor-profile',
@@ -16,6 +17,7 @@ import Project from '../../../models/project.model';
 export class InvestorProfileComponent implements OnInit, OnDestroy {
 
   @ViewChild(CommentsModalComponent) commentsdDetails: CommentsModalComponent ;
+  @ViewChild(ProjectcarouselComponent) associatedModalDetails: ProjectcarouselComponent ;
   investorObject: Investor;
   _projects;
   test: any;
@@ -42,28 +44,34 @@ private route: ActivatedRoute, private router: Router) {
       data => {
         this.investorObject = new Investor();
         Object.assign(this.investorObject, data.data as Investor);
-        // if (this.investorObject.investorAssociatedProjects) {
-        //   }
       });
   }
 getProjectTest() {
     this.getinvestorAssociatedProjects(this.investorObject.investorAssociatedProjects);
-
 }
   getinvestorAssociatedProjects(projects) {
-    this.projectService.getinvestorAssociatedProjects(projects).subscribe((results) => {
-      this._projects = results.data.map((prject) => {
-      return  Object.assign(new Project(), prject as Project);
-      });
-    });
+      if (projects && projects.length > 0 ) {
+        console.log('passed if');
+        this.projectService.getinvestorAssociatedProjects(projects).subscribe((results) => {
+          this._projects = results.data.map((prject) => {
+            return Object.assign(new Project(), prject as Project);
+          });
+          this.openAssociatedProjectsModal();
+        });
+      } else {this.openAssociatedProjectsModal(); }
   }
   openExtendedDetailsModal() {
       this.commentsdDetails.altOpen(this.investorObject.comments);
   }
+  openAssociatedProjectsModal() {
+   this.associatedModalDetails.altOpen(this._projects);
+  }
 
+  // adding a comment
   addComment(id) {
     this.commentsdDetails.addComment(this.investorObject._id);
   }
+  // navigating back from previous page
   return() {
     this.router.navigate(['investorsList'], { relativeTo: this.route.parent});
   }

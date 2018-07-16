@@ -1,0 +1,77 @@
+<ng-template  #comments let-c="close" let-d="dismiss" >
+  <!--<div class="modal-header">-->
+    <!--<h4 class="title" ><i class="fa fa-comment fa-fw"></i>פרוייקטים של משקיע זה</h4>-->
+  <!--</div>-->
+  <!--<div class="modal-body text">-->
+    <!--<div class="row"  >-->
+      <!--<ngb-carousel>-->
+        <!--<ng-template ngbSlide *ngFor="let project of projects">-->
+      <!--<div class="col col-sm-8"  style="width:720px; margin:0 auto;">-->
+        <!--<div class="card">-->
+
+          <!--<div class="card-header titel">{{project.projectName}}</div>-->
+          <!--<div class="row">-->
+            <!--<div class="col-md-12">-->
+
+                  <!--<img class="img-fluid mx-auto d-block" [src]="project.picture" alt="Random first slide" width="100%">-->
+                  <!--<div class="carousel-caption">-->
+                    <!--<h3>{{project.projectName}}</h3>-->
+                    <!--<p>{{project.address}}</p>-->
+                  <!--</div>-->
+
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="card-body">-->
+            <!--&lt;!&ndash;<p class="card-text">Text for this card. Here's <a href="#" class="card-link">why</a>.</p><br>&ndash;&gt;-->
+            <!--<span class="text-muted"><i class="fa fa-map-marker fa-fw"></i> כתובת: </span>-->
+            <!--<div class="bot-border"></div>-->
+            <!--<span class="text-muted"><i class="fa fa-building fa-fw"></i> יחידות </span>-->
+            <!--<div class="bot-border"></div>-->
+            <!--<span class="text-muted"><i class="fa fa-money fa-fw"></i> loan </span>-->
+            <!--<div class="bot-border"></div>-->
+            <!--<span class="text-muted"><i class="fa fa-arrows-alt fa-fw"></i> גודל </span>-->
+            <!--<div class="bot-border"></div>-->
+            <!--<span class="text-muted"><i class="fa fa-info-circle fa-fw"></i> סטטוס </span>-->
+            <!--<div class="bot-border"></div>-->
+            <!--<span class="text-muted"><i class="fa fa-line-chart fa-fw"></i> תשואה צפויה </span>-->
+            <!--<div class="bot-border"></div>-->
+
+          <!--</div>-->
+          <!--<div class="card-footer">-->
+
+          <!--</div>-->
+        <!--</div>-->
+
+      <!--</div>-->
+        <!--</ng-template>-->
+      <!--</ngb-carousel>-->
+    <!--</div>-->
+
+  <!--</div>-->
+  <!--<div class="modal-footer">-->
+    <!--<button type="button" class="btn btn-secondary" (click)="d('Close click')" >סגור</button>-->
+  <!--</div>-->
+  <div class="row">
+    <div class="col-md-12 ">
+      <div class="block">
+        <div class="block-title">
+          <div class="block-options text-center">
+            <h1 class="title">רשימת פרוייקטים</h1>
+          </div>
+        </div>
+        <div class="row col-md-12">
+          <div class="col-md-3" *ngFor="let project of projects">
+
+          </div>
+          <div class="col-md-3">
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="block-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
