@@ -42,9 +42,8 @@ private route: ActivatedRoute, private router: Router) {
       data => {
         this.investorObject = new Investor();
         Object.assign(this.investorObject, data.data as Investor);
-        if (this.investorObject.investorAssociatedProjects) {
-          //this.getinvestorAssociatedProjects(this.investorObject.investorAssociatedProjects);
-        }
+        // if (this.investorObject.investorAssociatedProjects) {
+        //   }
       });
   }
 getProjectTest() {
@@ -53,12 +52,9 @@ getProjectTest() {
 }
   getinvestorAssociatedProjects(projects) {
     this.projectService.getinvestorAssociatedProjects(projects).subscribe((results) => {
-     this._projects = new Array();
-      let p =new Project();
-       results.data.map((proj) => {
-        this._projects.push(Object.assign(p, proj as Project));
+      this._projects = results.data.map((prject) => {
+      return  Object.assign(new Project(), prject as Project);
       });
-      console.log(this._projects);
     });
   }
   openExtendedDetailsModal() {
