@@ -16,7 +16,6 @@ export class CommentsComponent implements OnInit {
     this.modalService.close(id);
   }
   openModal(id: string) {
-    console.log('open Modal');
     this.modalService.open(id);
 
   }

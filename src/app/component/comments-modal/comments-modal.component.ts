@@ -11,8 +11,7 @@ export class CommentsModalComponent implements OnInit {
 
   @ViewChild('comments')  extendedDetailsModal: ElementRef;
   @Input() test;
-  @Output()
-  updateComment = new EventEmitter<[any]>();
+  @Output() updateComment = new EventEmitter<[any]>();
   commentsArray: [any];
   private modalRef: NgbModalRef ;
   closeResult: string;
@@ -23,7 +22,6 @@ export class CommentsModalComponent implements OnInit {
   }
 
   open() {
-
     this.modalRef = this.modalService.open(this.extendedDetailsModal);
   }
   altOpen(comments) {
