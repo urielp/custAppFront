@@ -25,7 +25,7 @@ export class ProjectService {
 
   // getting associated user projects from DB
   // TODO :maybe we should handel all of the data [arsing here and returning it to component.
-  getinvestorAssociatedProjects(projects) {
+  getinvestorAssociatedProjects(projects): Observable <any> {
     return this.httpClient.get(this.projects_url + '/associatedProjects/', {params: {projects: projects}});
   }
 }

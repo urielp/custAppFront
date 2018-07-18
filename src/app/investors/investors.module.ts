@@ -15,12 +15,15 @@ import {DatePickerComponent} from '../component/date-picker/date-picker.componen
 import {ToastsComponent} from '../component/shared/toasts/toasts.component';
 import {PaginationComponent} from '../component/shared/pagination/pagination.component';
 import {ProjectcarouselComponent} from '../projects/projectcarousel/projectcarousel.component';
+import {ProjectsModule} from '../projects/projects.module';
+import { InvestorsProjectsComponent } from './investor/investors-projects/investors-projects.component';
 @NgModule({
   imports: [
     CommonModule,
     InvestorsRoutingModule,
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ProjectsModule
   ],
   declarations: [
     PaginationComponent,
@@ -34,8 +37,8 @@ import {ProjectcarouselComponent} from '../projects/projectcarousel/projectcarou
     InvestorProfileComponent,
     AddInvestorComponent,
     ToastsComponent,
-    ProjectcarouselComponent
-
+    ProjectcarouselComponent,
+    InvestorsProjectsComponent
   ]
 })
 export class InvestorsModule {}

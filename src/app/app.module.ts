@@ -9,7 +9,6 @@ import {InvestorsService} from '../app/investors/investor/investors-service';
 import {MessageService} from './component/shared/messageService';
 import {ProjectService} from './projects/services/projects.service';
 
-
 @NgModule({
 
   imports: [

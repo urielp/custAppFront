@@ -32,6 +32,7 @@ private route: ActivatedRoute, private router: Router) {
       (params: Params) => {
         this.id = params.id;
         this.getInvestorData();
+
       }
     );
   }
@@ -44,6 +45,7 @@ private route: ActivatedRoute, private router: Router) {
       data => {
         this.investorObject = new Investor();
         Object.assign(this.investorObject, data.data as Investor);
+        this.getProjectTest();
       });
   }
 getProjectTest() {
@@ -51,14 +53,15 @@ getProjectTest() {
 }
   getinvestorAssociatedProjects(projects) {
       if (projects && projects.length > 0 ) {
-        console.log('passed if');
-        this.projectService.getinvestorAssociatedProjects(projects).subscribe((results) => {
-          this._projects = results.data.map((prject) => {
+        this.projectService.getinvestorAssociatedProjects(projects).subscribe((data) => {
+          this._projects = data.data.map((prject) => {
             return Object.assign(new Project(), prject as Project);
           });
-          this.openAssociatedProjectsModal();
+          //this.openAssociatedProjectsModal();
         });
-      } else {this.openAssociatedProjectsModal(); }
+      } else {
+       // this.openAssociatedProjectsModal();
+      }
   }
   openExtendedDetailsModal() {
       this.commentsdDetails.altOpen(this.investorObject.comments);
@@ -66,7 +69,6 @@ getProjectTest() {
   openAssociatedProjectsModal() {
    this.associatedModalDetails.altOpen(this._projects);
   }
-
   // adding a comment
   addComment(id) {
     this.commentsdDetails.addComment(this.investorObject._id);
@@ -75,7 +77,6 @@ getProjectTest() {
   return() {
     this.router.navigate(['investorsList'], { relativeTo: this.route.parent});
   }
-
   onCommentsChange(comments) {
     this.investorObject.comments = comments;
     this.investorService.updateInvestorComments(this.investorObject).subscribe((results) => {
