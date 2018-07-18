@@ -1,5 +1,5 @@
 <div class="row" *ngIf="investorObject">
-    <div class="col col-sm-8">
+    <div class="col col-sm-12">
     <div class="card mt-3">
       <div class="card-header"><h1 class="titel">{{investorObject.firstName}}</h1></div>
       <div class="card-body">
@@ -45,7 +45,12 @@
       </div>
     </div>
   </div>
+  <div class="col col-md-12">
+    <app-investors-projects [temp]="investorObject.investorAssociatedProjects"></app-investors-projects>
+  </div>
+
   <div>
+
     <app-comments-modal [test]="investorObject.comments" (updateComment)="onCommentsChange($event)"></app-comments-modal>
     <app-toasts></app-toasts>
     <app-projectcarousel></app-projectcarousel>

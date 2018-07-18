@@ -23,6 +23,7 @@ import { ProjectcarouselComponent } from './projectcarousel/projectcarousel.comp
     ProjectsListComponent,
     DefaultComponent,
     ProjectdetailsComponent
-  ]
+  ],
+  exports: [ProjectComponent]
 })
 export class ProjectsModule {}
