@@ -17,6 +17,7 @@ import {PaginationComponent} from '../component/shared/pagination/pagination.com
 import {ProjectcarouselComponent} from '../projects/projectcarousel/projectcarousel.component';
 import {ProjectsModule} from '../projects/projects.module';
 import { InvestorsProjectsComponent } from './investor/investors-projects/investors-projects.component';
+import {ProjectToAddListComponent} from './investor/project-to-add-list/project-to-add-list.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -26,6 +27,7 @@ import { InvestorsProjectsComponent } from './investor/investors-projects/invest
     ProjectsModule
   ],
   declarations: [
+    ProjectToAddListComponent,
     PaginationComponent,
     CommentsModalComponent,
     DatePickerComponent,

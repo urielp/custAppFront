@@ -7,11 +7,11 @@
             <app-pagination  [paginationSize]="pages" [total]="total" (requierdPage)="getPage($event)"></app-pagination>
         </div>
       </div>
-        <div class=" row col-md-12">
+        <div class="row col-md-12">
           <div class="col-md-3" *ngFor="let investor of investorsList">
             <app-investor [investorObject]="investor"></app-investor>
           </div>
-      </div>
+       </div>
       <div class="row">
         <div class="block-footer">
           <div>
