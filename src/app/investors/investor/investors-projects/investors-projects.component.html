@@ -1,4 +1,4 @@
-<div class="col col-md-12" *ngIf="_hasProjects">
+<div class="col col-sm-12" *ngIf="_hasProjects">
   <div class="card mt-5">
     <div class="card-header">
       <h1 class="title">פרוייקטים קשורים ללקוח</h1>
@@ -6,7 +6,7 @@
     <div class="card-body">
       <div class="row" >
         <div class="col-sm-3" *ngFor="let project of _projects">
-          <app-project></app-project>
+          <app-project [project]="project"></app-project>
         </div>
       </div>
     </div>
@@ -15,7 +15,7 @@
     </div>
   </div>
 </div>
-<div class="col col-md-12" *ngIf="!_hasProjects" >
+<div class="col col-sm-12" *ngIf="!_hasProjects" >
   <div class="card mt-5">
     <div class="card-header">
 

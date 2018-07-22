@@ -18,6 +18,7 @@ export class InvestorsProjectsComponent implements OnInit {
   constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
+
     if (this._projects && this._projects.length > 0) {
       this._hasProjects = true;
     } else {this._hasProjects = false; }

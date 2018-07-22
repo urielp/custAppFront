@@ -32,7 +32,6 @@ private route: ActivatedRoute, private router: Router) {
       (params: Params) => {
         this.id = params.id;
         this.getInvestorData();
-
       }
     );
   }
@@ -46,6 +45,7 @@ private route: ActivatedRoute, private router: Router) {
         this.investorObject = new Investor();
         Object.assign(this.investorObject, data.data as Investor);
         this.getProjectTest();
+        console.log(this.investorObject.investorAssociatedProjects);
       });
   }
 getProjectTest() {
