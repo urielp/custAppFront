@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ProjectService} from '../../../projects/services/projects.service';
 import Project from '../../../models/project.model';
+import {ActivatedRoute, Router} from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class InvestorsProjectsComponent implements OnInit {
   _projects;
 
   _hasProjects: boolean;
-  constructor(private projectService: ProjectService) { }
+  constructor(private projectService: ProjectService,private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
 
@@ -35,5 +36,10 @@ export class InvestorsProjectsComponent implements OnInit {
         this._hasProjects = true;
       });
     }
+  }
+
+
+  addProject() {
+    this.router.navigate(['addProjectToInvestor'], { relativeTo: this.route.parent});
   }
 }
