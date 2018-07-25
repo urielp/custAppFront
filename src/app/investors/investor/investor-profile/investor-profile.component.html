@@ -49,7 +49,8 @@
   </div>
 </div>
 <div class="row" *ngIf="investorObject">
-    <app-investors-projects [temp]="investorObject.investorAssociatedProjects" class="projectsApp"></app-investors-projects>
+    <app-investors-projects (testUpdatesInProjects)="save()"  [asProjects]="investorObject.investorAssociatedProjects" class="projectsApp" ></app-investors-projects>
+    <app-project-to-add-list  [currentProjects]="investorObject.investorAssociatedProjects" (addAvilableproject)="childEventClicked($event)"></app-project-to-add-list>
   <div>
     <app-comments-modal [test]="investorObject.comments" (updateComment)="onCommentsChange($event)"></app-comments-modal>
     <app-toasts></app-toasts>
