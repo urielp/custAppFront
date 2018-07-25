@@ -8,6 +8,7 @@ import {MessageService} from '../../../component/shared/messageService';
 import {ProjectService} from '../../../projects/services/projects.service';
 import Project from '../../../models/project.model';
 import {ProjectcarouselComponent} from '../../../projects/projectcarousel/projectcarousel.component';
+import {ProjectToAddListComponent} from '../project-to-add-list/project-to-add-list.component';
 
 @Component({
   selector: 'app-investor-profile',
@@ -23,6 +24,7 @@ export class InvestorProfileComponent implements OnInit, OnDestroy {
   test: any;
   prametersSubscription: Subscription;
   id: string;
+  public clickedEvent: Event;
   constructor(private investorService: InvestorsService, private projectService: ProjectService ,
 private route: ActivatedRoute, private router: Router) {
   }
@@ -66,6 +68,7 @@ getProjectTest() {
   openExtendedDetailsModal() {
       this.commentsdDetails.altOpen(this.investorObject.comments);
   }
+
   openAssociatedProjectsModal() {
    this.associatedModalDetails.altOpen(this._projects);
   }
@@ -81,5 +84,14 @@ getProjectTest() {
     this.investorObject.comments = comments;
     this.investorService.updateInvestorComments(this.investorObject).subscribe((results) => {
     });
+  }
+  childEventClicked(event: Event) {
+    console.log(this.investorObject.investorAssociatedProjects);
+  }
+
+  // updating investor associated projects
+  // TODO:trigger backend update
+  save() {
+    console.log(this.investorObject.investorAssociatedProjects);
   }
 }

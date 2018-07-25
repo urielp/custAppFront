@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {ProjectService} from '../../../projects/services/projects.service';
 import Project from '../../../models/project.model';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Subscription} from 'rxjs/internal/Subscription';
 
 
 @Component({
@@ -9,27 +10,32 @@ import {ActivatedRoute, Router} from '@angular/router';
   templateUrl: './investors-projects.component.html',
   styleUrls: ['./investors-projects.component.scss']
 })
-export class InvestorsProjectsComponent implements OnInit {
+export class InvestorsProjectsComponent implements OnInit,OnDestroy {
 
   @Input()
-   temp;
+  asProjects;
   _projects;
-
   _hasProjects: boolean;
-  constructor(private projectService: ProjectService,private route: ActivatedRoute, private router: Router) { }
+  @Input() event: Event;
+  projectAdding: Subscription;
+  @Output() testUpdatesInProjects = new EventEmitter<any>();
+  constructor(private projectService: ProjectService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
 
-    if (this._projects && this._projects.length > 0) {
-      this._hasProjects = true;
-    } else {this._hasProjects = false; }
-    this.getinvestorAssociatedProjects();
+    if (this.asProjects && this.asProjects.length > 0) {
+       this._hasProjects = true;
+       this.getinvestorAssociatedProjects();
+    } else {
+      this._hasProjects = false;
+    }
+   this.projectAdding = this.projectService.events$.subscribe((project) => {
+      this.pushProjectToArray(project);
+    });
   }
   getinvestorAssociatedProjects() {
-   // if (!this._projects  ) {
-    console.log(this._projects);
     if (!this._projects) {
-      this.projectService.getinvestorAssociatedProjects(this.temp).subscribe((results) => {
+      this.projectService.getinvestorAssociatedProjects(this.asProjects).subscribe((results) => {
         this._projects = results.data.map((project) => {
           return Object.assign(new Project(), project as Project);
         });
@@ -38,8 +44,25 @@ export class InvestorsProjectsComponent implements OnInit {
     }
   }
 
-
+  // adding available project to the current project list of investor
+  pushProjectToArray(project: Project): void {
+    if (!this._projects) {
+      this._projects = new Array();
+    }
+    this._projects.push(project);
+    this.asProjects.push(project.id);
+    this._hasProjects = true;
+  }
   addProject() {
     this.router.navigate(['addProjectToInvestor'], { relativeTo: this.route.parent});
+  }
+
+  ngOnDestroy() {
+    this.projectAdding.unsubscribe();
+  }
+
+  saveChanges() {
+    console.log('saved');
+    this.testUpdatesInProjects.emit();
   }
 }

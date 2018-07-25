@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {a} from '@angular/core/src/render3';
+import {Subject} from 'rxjs/internal/Subject';
 
 @Injectable()
 export class ProjectService {
@@ -11,9 +12,9 @@ export class ProjectService {
 
   api_url = 'http://localhost:3000';
   projects_url = `${this.api_url}/projects`;
-
+  private _subject = new Subject<any>();
   // getting the list of projects
-  // TODO :maybe we should handel all of the data [arsing here and returning it to component.
+  // TODO :maybe we should handel all of the data parsing here and returning it to component.
   getProjetcs(): Observable<any> {
     return this.httpClient.get(this.projects_url);
   }
@@ -27,5 +28,13 @@ export class ProjectService {
   // TODO :maybe we should handel all of the data [arsing here and returning it to component.
   getinvestorAssociatedProjects(projects): Observable <any> {
     return this.httpClient.get(this.projects_url + '/associatedProjects/', {params: {projects: projects}});
+  }
+
+  newEvent(event) {
+    this._subject.next(event);
+  }
+
+  get events$ () {
+    return this._subject.asObservable();
   }
 }
