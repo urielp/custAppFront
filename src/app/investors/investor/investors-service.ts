@@ -11,8 +11,10 @@ import Investor from '../../models/investor.model';
 @Injectable()
 export class InvestorsService {
 
-  api_url = 'http://localhost:3000';
-  investors_url = `${this.api_url}/Investor`;
+  //api_url = 'http://localhost:3000';
+  //investors_url = `${this.api_url}/Investor`;
+  api_url = '';
+  investors_url = `${this.api_url}Investor`;
   private _investorsList: Investor[];
 
   constructor(private httpClient: HttpClient) {

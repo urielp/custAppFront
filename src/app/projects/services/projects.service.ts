@@ -10,8 +10,10 @@ export class ProjectService {
   constructor(private httpClient: HttpClient) {
   }
 
-  api_url = 'http://localhost:3000';
-  projects_url = `${this.api_url}/projects`;
+ // api_url = 'http://localhost:3000';
+  api_url ='';
+  //projects_url = `${this.api_url}/projects`;
+  projects_url = `${this.api_url}projects`;
   private _subject = new Subject<any>();
   // getting the list of projects
   // TODO :maybe we should handel all of the data parsing here and returning it to component.
